@@ -1,0 +1,124 @@
+{% extends '_shared/base.html' %}
+{% load thumbnail %}
+
+{% block title %}
+    {{ film.name }} - Download
+{% endblock %}
+
+{% block body %}
+    <div class="page">
+        <div class="pageBg"></div>
+
+        <div class="container">
+
+            <div class="post">
+                <div class="leftPost">
+                    {% thumbnail film.banner "294x458" crop="center" as im %}
+                        <img src="{{ im.url }}" alt="The 5th Exotic">
+                    {% endthumbnail %}
+                </div>
+                <div class="rightPost">
+                    <div class="RateSaveBox">
+                        <div class="RateBox">
+                            <h3>Rate</h3>
+                            <div class="RateStars">
+                                <input type="radio" id="star5" name="rate" value="5">
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4">
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3">
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2">
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1">
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                        </div>
+                        <div class="saveBox">
+                            <p><i class="fa fa-bookmark-o"> Watch later </i></p>
+                        </div>
+
+
+                    </div>
+                    <div class="BoxHeader">
+                        <h2>{{ film.name }}</h2>
+                    </div>
+                    <div class="genre"><i class="fa fa-mask"></i>Genre : {% for genre in film.genre.all %}
+                        {{ genre }}
+                    {% endfor %}
+                    </div>
+                    <div class="IMDBrate"><i class="fa fa-imdb"></i>IMDB : {{ film.imdb }}</div>
+                    <div class="year"><i class="far fa-calendar-alt"></i>Release Year
+                        : {{ film.release_date.date.year }}</div>
+                    <div class="Lan"><i class="fa fa-language"></i>Language : {{ film.lang }}</div>
+                    <div class="country"><i class="fas fa-globe"></i>Country : {{ film.country }}</div>
+                    <div class="Dir"><i class="fa fa-user"></i>Director : {{ film.director }} </div>
+                    <div class="Cast"><i class="fas fa-users"></i>Cast : {{ film.cast }} </div>
+
+
+                </div>
+
+            </div>
+            <div class="DownloadBox">
+                <div class="DWContainer">
+                    <div class="DWTitle">
+                        Download Box
+                    </div>
+                    <div>
+                        {% for quality in film_qualities %}
+                            <p><span class="blt"> {{ quality }}</span></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="SInfoBox">
+                <div class="BoxHeader">
+                    <h2>{{ film.name }}</h2>
+                </div>
+                <p>
+                    {{ film.description }}
+                </p>
+
+                <span class="maturity-rating">
+                    <i class="fas fa-fire"></i> Maturity rating: TV-MA
+                </span>
+                <span class="EPTime">
+                    <i class="far fa-clock"></i> Time : {{ film.length }} "
+                </span>
+            </div>
+        </div>
+        <div class="MovieSlider ">
+            <div class="SliderTitle">Same genre</div>
+            <main class="regular slider">
+                {% for related_film in related_films %}
+                    <li class="item">
+                        <div class="itemImage">
+                            {% thumbnail related_film.banner "450x555" crop="center" as im %}
+                                <img src="{{ im.url }}" alt="">
+                            {% endthumbnail %}
+                            <div class="hover">
+                                <i class="fas fa-play" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="MovieName">
+                            <h4>{{ related_film.name }}</h4>
+                        </div>
+                    </li>
+                {% endfor %}
+
+            </main>
+        </div>
+
+    </div>
+    <div class="nav-mask">
+    </div>
+    <script type="text/javascript">
+        $(".DWTitle").each((index,item) => {
+    $(item).on("click",() => {
+         $($("DWItems")[index]).slideToggle(200);
+    })
+})
+
+
+    </script>
+{% endblock %}

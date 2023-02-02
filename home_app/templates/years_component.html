@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="../../assets/css/LandingPageStyle.css">
+
+
+<ul class="YearFilter">
+    {% for year in all_years %}
+        <li class="Year"><a href="{{ year.get_absolute_url }}"
+                             style="text-decoration: none; color: inherit">{{ year }}</a></li>
+    {% endfor %}
+</ul>

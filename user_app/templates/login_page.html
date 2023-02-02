@@ -1,0 +1,51 @@
+{% extends '_shared/base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+    <div class="container1">
+        <div class="background-mask"></div>
+        <form class="LoginBox" action="{% url 'login-page' %}" method="post">
+            <div class="Title">
+                <h1>Login</h1>
+            </div>
+            {% csrf_token %}
+            <div class="formInput">
+                <p style="color: white; margin-bottom: -10px; font-weight: bold">{{ login_form.email.label }}</p>
+                {{ login_form.email }}
+                {{ login_form.email.errors }}
+                <br style="margin-bottom: 20px">
+                <p style="color: white; margin-bottom: -10px; font-weight: bold">{{ login_form.password.label }}</p>
+                {{ login_form.password }}
+                {{ login_form.password.errors }}
+                <br style="margin-bottom: 20px">
+                <div class="RememberMeBox flexbox">
+                    <p style="color: white; margin-bottom: -10px; font-weight: bold;">{{ login_form.remember_me.label }}</p>
+                    {{ login_form.remember_me }}
+                </div>
+            </div>
+
+            <div class="confirmBox">
+                <input type="submit" class="LoginButt" value="Login">
+            </div>
+
+            <div class="separate">
+                <div></div>
+                <p>Or</p>
+                <div></div>
+            </div>
+
+            <div class="GoogleLogin">
+                <i class="fa fa-google"> </i>
+                <p>Continue with Google</p>
+            </div>
+
+            <div class="LoginBoxFooter">
+                <p style="font-size: 14px; font-weight: bold">Don't you have account? <span>Sign up</span></p>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    {% include '_shared/header_ref.html' %}
+</head>
+<body>
+    {% render_partial 'home_app.views.header' %}
+
+{% block body %}
+
+{% endblock %}
+    {% render_partial 'home_app.views.footer' %}
+    {% include '_shared/footer_ref.html '%}
+</body>
+</html>

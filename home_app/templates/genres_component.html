@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="../../assets/css/LandingPageStyle.css">
+
+<ul class="GenreFilter">
+    {% for genre in all_genres %}
+        <li class="Genre"><a href="{{ genre.get_absolute_url }}"
+                             style="text-decoration: none; color: inherit">{{ genre }}</a></li>
+    {% endfor %}
+</ul>

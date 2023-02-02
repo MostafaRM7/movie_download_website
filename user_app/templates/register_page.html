@@ -1,0 +1,25 @@
+{% extends '_shared/base.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block body %}
+    <main class="page registration-page">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Registration</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                        mattis vitae leo.</p>
+                </div>
+                <form action="{% url 'register-page' %}" method="post">
+                    {% csrf_token %}
+                    {{ register_form }}
+                    <br>
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+{% endblock %}

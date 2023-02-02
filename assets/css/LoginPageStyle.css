@@ -1,0 +1,233 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+}
+body
+{
+    background-color: black;
+}
+.container1
+{
+    width: 100%;
+    position: relative;
+    height: 740px;
+    background: url('../img/login/Loginbg.jpg') no-repeat center;
+    background-size: cover;
+    z-index: 0;
+}
+.background-mask
+{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    backdrop-filter: blur(15px);
+}
+.LoginBox
+{
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid rgb(166, 166, 166);
+    width: 450px;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    border-radius: 25px;
+    height: 85%;
+    backdrop-filter: brightness(0.7);
+}
+.Title h1
+{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+.formInput
+{
+    width: 90%;
+    display: flex;
+    margin: 30px auto 0 auto;
+    flex-direction: column;
+}
+.formInput label
+{
+    color: white;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.formInput input
+{
+    outline: none;
+    border: none;
+    padding: 14px;
+    background: none;
+    font-size: 16px;
+    margin-top: 25px;
+    border-radius: 30px;
+    border: 2px rgb(166, 166, 166) solid;
+    color: aliceblue;
+    transition: 0.3s;
+}
+.formInput input:focus
+{
+    width: 92%;
+}
+.RememberMeBox
+{
+    width: 90%;
+    margin: 7px auto 0 auto;
+    color: aliceblue;
+    display: flex;
+}
+.confirmBox
+{
+    width: 90%;
+    margin: 25px auto 0 auto;
+}
+.confirmBox .LoginButt
+{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: #C91415;
+    border-radius: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+.separate
+{
+    margin-top: 50px;
+    text-align: center;
+    color: rgb(156, 156, 156);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.separate p
+{
+   margin: 0 10px 0 10px;
+   color: aliceblue;
+}
+.separate div
+{
+    float: left;
+    width: 40%;
+    height: 1px;
+    background-color: rgb(162, 162, 162);
+}
+.GoogleLogin
+{
+    margin-top: 30px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.GoogleLogin
+{
+    width: 90%;
+    height: 50px;
+    border: 2px rgb(166, 166, 166) solid;
+    margin: 30px auto 0 auto;
+    color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.GoogleLogin p 
+{
+    font-weight: 600;
+    font-size: 19px;
+    margin-left: 5px;
+}
+.GoogleLogin i
+{
+    font-size: 30px;
+    margin-right: 8px;
+}
+.LoginBoxFooter
+{
+    position: absolute;
+    bottom: 15px;
+    margin: 0 auto 0 auto;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.LoginBoxFooter p
+{
+    color: rgb(166, 166, 166);
+}
+.LoginBoxFooter p span
+{
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+}
+@media only screen and (max-width : 450px)
+{
+    
+    .LoginBox
+    {
+        width: 360px;
+        height: 63%;
+        top: 35%;
+    }
+    .Title h1
+    {
+        font-size: 30px;
+    }
+    .GoogleLogin i
+    {
+    font-size: 20px;
+    margin-right: 8px;
+    }
+    .separate
+    {
+        margin-top: 20px;
+    }
+    .GoogleLogin
+    {
+        margin-top: 20px;
+    }
+    .LoginBoxFooter
+    {
+        text-align: center;
+        width: 70%;
+    }
+}
+@media only screen and (max-width : 400px)
+{
+    .LoginBox
+    {
+        width: 345px;
+        height: 68%;
+        top: 37%;
+        border-radius: 15px;
+    }
+}
+@media only screen and (max-width : 395px)
+{
+    .LoginBox
+    {
+        width: 330px;
+        height: 87%;
+        top: 47%;
+        border-radius: 15px;
+    }
+    .GoogleLogin p
+    {
+        font-size: 17px;
+    }
+}

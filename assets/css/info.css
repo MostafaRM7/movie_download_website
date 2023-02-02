@@ -1,0 +1,583 @@
+
+.container
+{
+    width: 80%;
+    margin: 80px auto 0 auto;
+    backdrop-filter: brightness(0.70);
+    border-radius: 15px;
+    padding: 10px;
+    border: 2px solid rgb(119, 119, 119);
+}
+header
+{
+    height: 60px;
+}
+.page
+{
+    width: 100%;
+    margin-bottom: 40px;
+    
+}
+.pageBg
+{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    filter: blur(15px);
+    background: url('../img/SliderBg/slide-4.jpg');
+    height: 960px;
+}
+.BoxHeader h2
+{
+    margin: 20px 5px;
+    font-size: 28px;
+    color: white;
+}
+.FInfoBox
+{
+    width: 100%;
+}
+.post 
+{
+    display: flex;
+}
+.leftPost
+{
+    width: 25%;
+    margin-top: 30px;
+}
+.rightPost
+{
+    width: 75%;
+    height: 100%;
+}
+.RateSaveBox
+{
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+.RateSaveBox .rateBox h2
+{
+   color: #d7d7d7;
+}
+.RateBox {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.RateBox  h3
+{
+    color: #d7d7d7;
+}
+ .RateBox  .RateStars:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.RateBox .RateStars:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.RateBox .RateStars:not(:checked) > label:before {
+    content: '★ ';
+}
+.RateBox  .RateStars > input:checked ~ label {
+    color: #ffc700;    
+}
+.RateBox .RateStars:not(:checked) > label:hover,
+.RateBox .RateStars:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.RateBox .RateStars > input:checked + label:hover,
+.RateBox .RateStars> input:checked + label:hover ~ label,
+.RateBox .RateStars> input:checked ~ label:hover,
+.RateBox .RateStars > input:checked ~ label:hover ~ label,
+.RateBox .RateStars> label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.saveBox i
+{
+    margin-top: 25px;
+    color: #E0E0E0;
+    font-size: 20px;
+    font-family: initial !important;
+}
+.leftPost img
+{
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-left: 15px;
+}
+.rightPost > div
+{
+   margin: 30px 45px;
+}
+.Des
+{
+    width: 95%;
+    background-color: rgba(32, 32, 32, 0.547);
+    margin: 30px auto 0 auto;
+    position: initial;
+}
+.TrailerBox
+{
+    width: 98%;
+    margin: 60px auto 0 auto;
+    position: relative;
+    text-align: center;
+}
+.TrailerBox img
+{
+    width: 99%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    border-radius: 25px;
+    user-select: none;
+    pointer-events: none;
+}
+.TrlVideo
+{
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 10px rgba(19, 19, 19, 0.371);
+}
+.DownloadBox
+{
+    width: 95%;
+    margin: 20px auto 0 auto;
+    border-top: 2px solid rgb(119, 119, 119);
+}
+.DWContainer
+{
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid rgb(119, 119, 119);
+  border-radius: 30px;
+  padding-bottom: 15px;
+}
+.DWTitle
+{
+    width: 40%;
+    height: 80px;
+    margin: 0 auto 30px auto;
+    font-size: 25px;
+    line-height: 80px;
+    text-align: center;
+    color: yellow;
+    border-bottom: 2px solid rgb(119, 119, 119);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ;
+}
+.DWTitle:hover
+{
+    width: 60%;
+}
+.DWItems
+{
+    width: 100%;
+    display: none;
+}
+.DWContainer p
+{
+    text-align: center;
+    color: #E0E0E0;
+    margin: 2px auto 0 auto;
+    border-radius: 10px;
+    height: 65px;
+    line-height: 65px;
+    cursor: pointer;
+    width: 95%;
+
+}
+.DWContainer p:nth-child(odd)
+{
+    background-color: #0C0C0C;
+}
+
+.DWContainer p:after {
+    content: '';
+    width: 0px;
+    height: 2.2px;
+    margin: 0px auto 0 auto;
+    display: block;
+    background: rgb(216, 216, 216);
+    transition: 400ms;
+  }
+  .DWContainer p:hover::after
+  {
+    width: 80%;
+  }
+.rdt , .blt
+{
+    font-weight: 600;
+}
+.rdt
+{
+    color: red;
+}
+.blt
+{
+    color: rgb(91, 91, 255);
+}
+.DWTitle:hover ~ .DWContainer p
+{
+    color: red;
+}
+.SInfoBox
+{
+    width: 95%;
+    margin: 40px auto 0 auto;
+    color: #c5c5c5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.SInfoBox p
+{
+    font-size: 18px;
+
+}
+.SInfoBox span
+{
+    display: block;
+    margin: 20px 5px;
+    font-size: 18px;
+}
+.SInfoBox span i
+{
+    font-size: 19px;
+    color: rgb(255, 238, 0);
+    margin-right: 10px;
+}
+@media only screen and (max-width : 1400px) {
+    
+    .rightPost
+    {
+        width: 70%;
+    }
+    .leftPost
+   {
+    width: 28%;
+   }
+   .TrailerBox
+   {
+    margin-top: 70px;
+   }
+
+}
+@media only screen and (max-width : 1300px)
+{
+    
+    .DWContainer .DWTitle
+ {
+    width: 50%;
+ }
+ .DWTitle:hover
+ {
+    width: 60%;
+ }
+ .rightPost .Des
+ {
+    width: 85%;
+ }
+ .Des p
+ {
+    font-size: 15px;
+ }
+ .rightPost
+ {
+     width: 71%;
+ }
+ .leftPost
+{
+ width: 29%;
+}
+}
+
+@media only screen and (max-width : 1200px)
+{
+    .rightPost > div
+   {
+    margin: 22px 40px;
+   }
+   .genre > i, .IMDBrate > i, .Dir > i, .Cast > i, .year > i, .country > i, .Lan > i
+   {
+    font-size: 20px;
+   }
+   .TrailerBox
+    {
+     margin-top: 10px;
+    }
+    .rightPost
+    {
+        width: 73%;
+    }
+    .leftPost
+   {
+    width: 27%;
+   }
+}
+@media only screen and (max-width : 1000px)
+{
+   .genre, .IMDBrate, .Dir, .Cast, .year, .country, .Lan
+   {
+     font-size: 12px;
+   }
+
+   .genre > i, .IMDBrate > i, .Dir > i, .Cast > i, .year > i, .country > i, .Lan > i
+   {
+    font-size: 20px;
+   }
+  .BoxHeader h2 
+  {
+    font-size: 22px;
+  }
+   .rightPost
+    {
+        width: 72%;
+    }
+    .leftPost
+   {
+    width: 28%;
+   }
+   .BoxHeader h2
+   {
+    margin: 20px -3px;
+    font-size: 23px;
+   }
+   .DWContainer .DWTitle
+   {
+    width: 65%;
+    font-size: 23px;
+   }
+   .rightPost > div
+   {
+    font-size: 13px;
+    margin: 20px 40px;
+   }
+}
+@media only screen and (max-width : 860px)
+{
+    .RateSaveBox {
+      right: -26px;
+    }
+    .rightPost
+    {
+        width: 70%;
+    }
+    .RateBox h3
+    {
+        font-size: 16px;
+    }
+    .RateBox:not(:checked) > label
+    {
+        font-size: 25px;
+    }
+    .leftPost
+   {
+    width: 30%;
+   }
+   .rightPost > div
+   {
+    font-size: 12x;
+    margin: 17px 40px;
+   }
+}
+@media only screen and (max-width : 755px)
+{
+
+    .rightPost
+    {
+        width: 70%;
+    }
+    .RateSaveBox {
+        right: -14px;
+    }
+    .TrailerBox img
+    {
+        border-radius: 8px;
+    }
+    .TrlVideo
+    {
+        width: 40%;
+    }
+    .Des
+    {
+        width: 90%;
+    }
+    .leftPost
+   {
+    width: 30%;
+   }
+   .genre > i, .IMDBrate > i, .Dir > i, .Cast > i, .year > i, .country > i, .Lan > i
+   {
+    font-size: 17px;
+   }
+   .rightPost > div
+   {
+    font-size: 10.5px;
+    margin: 3% 40px;
+   }
+   .DWContainer .DWTitle
+    {
+        font-size: 19px;
+        width: 80%;
+    }
+}
+@media only screen and (max-width : 700px)
+{
+    .post 
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftPost
+    {
+        width: 45%;
+    }
+    .BoxHeader h2
+    {
+        font-size: 22px;
+    }
+    .rightPost > div
+    {
+        margin: 17px 12px;
+    }
+    .rightPost > div
+   {
+    font-size: 12px;
+   }
+    .leftPost img
+    {
+        margin: 0;
+    }
+    .rightPost
+    {
+        width: 100%;
+    }
+    .DWContainer .DWTitle
+    {
+        font-size: 15px;
+        width: 68%;
+    }
+    .DWContainer .DWTitle::hover 
+    {
+        width: 73%;
+    }
+    .DWItems p 
+    {
+        font-size: 13px;
+    }
+    .SInfoBox p
+    {
+        font-size: 16px;
+    }
+    .SInfoBox span
+    {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width : 470px)
+{
+    .container
+    {
+        width: 100%;
+        backdrop-filter: brightness(0.65);
+        backdrop-filter: none;
+        padding: 0;
+        border: none;
+    }
+    .pageBg
+    {
+        background: none !important;
+    }
+    .leftPost
+    {
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        top: -29px;
+    }
+    .leftPost::before
+    {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-image: linear-gradient(0deg, #000 0%, transparent 50%);
+    }
+    .rightPost
+    {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-top: 15px;
+    }
+    .BoxHeader
+    {
+        grid-column: 1 /3;
+    }
+    .BoxHeader h2
+    {
+        text-align: center;
+        font-size: 21px;
+    }
+    .leftPost img 
+    {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .post
+    {
+        margin-top: 230px;
+    }
+    .rightPost > div {
+        margin: 7px 12px;
+    }
+    .RateSaveBox
+    {
+        position: unset;
+        width: 80%;
+        margin: 0 auto 0 auto !important;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        grid-column: 1 / 3;
+    }
+    .RateBox
+    {
+        margin-top: 10px;
+    }
+    .TrailerBox img
+    {
+        display: none;
+    }
+    
+    .TrlVideo
+   {
+    position: initial;
+    width: 100%;
+   }
+    .RateSaveBox
+    {
+        top: 290px;
+    }
+    .DWContainer .DWTitle
+    {
+        width: 85%;
+    }
+}

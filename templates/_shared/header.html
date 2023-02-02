@@ -1,0 +1,46 @@
+<header>
+    <nav>
+        <div class="ToggleButton">
+            <button type="button" class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <ul class="navbarList">
+            <li class="navbarItem {% if request.resolver_match.url_name == 'home-page' %}activeItem{% endif %}"><a
+                    href="{% url 'home-page' %}"
+                    style="text-decoration: none; color: inherit">Home</a></li>
+            <li class="navbarItem {% if request.resolver_match.url_name == 'serie-list-page' %}activeItem{% endif %}">
+                <a
+                        href="{% url 'serie-list-page' %}"
+                        style="text-decoration: none; color: inherit">Series</a>
+            </li>
+            <li class="navbarItem {% if request.resolver_match.url_name == 'film-list-page' %}activeItem{% endif %}">
+                <a
+                        href="{% url 'film-list-page' %}"
+                        style="text-decoration: none; color: inherit">Films</a>
+            </li>
+            <li class="navbarItem">Contact Us</li>
+            {% if user.is_superuser and user.is_authenticated %}
+                <li class="navbarItem"><a href="/admin" target="_blank" style="text-decoration: none; color: inherit">Admin</a>
+                </li>
+
+            {% endif %}
+        </ul>
+        <div class="navRightPart">
+            <div class="searchBox">
+                <input type="text" id="searchinput" placeholder="Search"/>
+            </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <button class="LoginButt"><a href="{% url 'logout' %}"
+                                                 style="text-decoration: none; color: inherit">Logout</a><i class="icon-logout"></i></button>
+                {% else %}
+                    <button class="LoginButt"><a href="{% url 'login-page' %}"
+                                                 style="text-decoration: none; color: inherit">Login</a></button>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,404 @@
+{% extends '_shared/base.html' %}
+{% load thumbnail %}
+{% load render_partial %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="Scriptcontent">
+
+                <!-- partial:index.partial.html -->
+                <img id="1" class="hide" src="{{ slider.number_1.background.url }}" alt="">
+                <img id="2" class="hide" src="{{ slider.number_2.background.url }}" alt="">
+                <img id="3" class="bg-Image" src="{{ slider.number_3.background.url }}" alt="">
+                <img id="4" class="hide" src="{{ slider.number_4.background.url }}" alt="">
+                <img id="5" class="hide" src="{{ slider.number_5.background.url }}" alt="">
+                <div class="bg-effect"></div>
+                <div class="Slidercontainer">
+                    <div class="wgh-slider">
+                        <input class="wgh-slider-target" onclick="set_wall(1)" type="radio" id="slide-1" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall(2)" type="radio" id="slide-2" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall(3)" type="radio" id="slide-3" name="slider"
+                               checked="checked">
+                        <input class="wgh-slider-target" onclick="set_wall(4)" type="radio" id="slide-4" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall(5)" type="radio" id="slide-5" name="slider">
+                        <div class="wgh-slider__viewport">
+                            <div class="wgh-slider__viewbox">
+                                <div class="wgh-slider__container">
+                                    <!-- number 1 -->
+                                    <div class="wgh-slider-item">
+                                        <div class="wgh-slider-item__inner">
+                                            <figure class="wgh-slider-item-figure">
+                                                {% thumbnail slider.number_1.banner "294x458" crop="center" as im %}
+                                                    <img class="wgh-slider-item-figure__image" src="{{ im.url }}"
+                                                         alt="The 5th Exotic">
+                                                {% endthumbnail %}
+                                                <figcaption class="wgh-slider-item-figure__caption"><a
+                                                        href="{{ slider.number_1.get_absolute_url }}">{{ slider.number_1.name }}</a><span>{{ slider.number_1.release_date }}</span>
+                                                </figcaption>
+                                            </figure>
+                                            <label class="wgh-slider-item__trigger" for="slide-1"
+                                                   title="Show product 1"></label>
+                                        </div>
+                                    </div>
+                                    <!-- number 2 -->
+                                    <div class="wgh-slider-item">
+                                        <div class="wgh-slider-item__inner">
+                                            <figure class="wgh-slider-item-figure">
+                                                {% thumbnail slider.number_2.banner "294x458" crop="center" as im %}
+                                                    <img class="wgh-slider-item-figure__image" src="{{ im.url }}"
+                                                         alt="The 5th Exotic">
+                                                {% endthumbnail %}
+                                                <figcaption class="wgh-slider-item-figure__caption"><a
+                                                        href="{{ slider.number_2.get_absolute_url }}">{{ slider.number_2.name }}</a><span>{{ slider.number_2.release_date }}</span>
+                                                </figcaption>
+                                            </figure>
+                                            <label class="wgh-slider-item__trigger" for="slide-2"
+                                                   title="Show product 1"></label>
+                                        </div>
+                                    </div>
+                                    <!-- number 3 -->
+                                    <div class="wgh-slider-item">
+                                        <div class="wgh-slider-item__inner">
+                                            <figure class="wgh-slider-item-figure">
+                                                {% thumbnail slider.number_3.banner "294x458" crop="center" as im %}
+                                                    <img class="wgh-slider-item-figure__image" src="{{ im.url }}"
+                                                         alt="The 5th Exotic">
+                                                {% endthumbnail %}
+                                                <figcaption class="wgh-slider-item-figure__caption"><a
+                                                        href="{{ slider.number_3.get_absolute_url }}">{{ slider.number_3.name }}</a><span>{{ slider.number_3.release_date }}</span>
+                                                </figcaption>
+                                            </figure>
+                                            <label class="wgh-slider-item__trigger" for="slide-3"
+                                                   title="Show product 1"></label>
+                                        </div>
+                                    </div>
+                                    <!-- number 4 -->
+                                    <div class="wgh-slider-item">
+                                        <div class="wgh-slider-item__inner">
+                                            <figure class="wgh-slider-item-figure">
+                                                {% thumbnail slider.number_4.banner "294x458" crop="center" as im %}
+                                                    <img class="wgh-slider-item-figure__image" src="{{ im.url }}"
+                                                         alt="The 5th Exotic">
+                                                {% endthumbnail %}
+                                                <figcaption class="wgh-slider-item-figure__caption"><a
+                                                        href="{{ slider.number_4.get_absolute_url }}">{{ slider.number_4.name }}</a><span>{{ slider.number_4.release_date }}</span>
+                                                </figcaption>
+                                            </figure>
+                                            <label class="wgh-slider-item__trigger" for="slide-4"
+                                                   title="Show product 1"></label>
+                                        </div>
+                                    </div>
+                                    <!-- number 5 -->
+                                    <div class="wgh-slider-item">
+                                        <div class="wgh-slider-item__inner">
+                                            <figure class="wgh-slider-item-figure">
+                                                {% thumbnail slider.number_5.banner "294x458" crop="center" as im %}
+                                                    <img class="wgh-slider-item-figure__image" src="{{ im.url }}"
+                                                         alt="The 5th Exotic">
+                                                {% endthumbnail %}
+                                                <figcaption class="wgh-slider-item-figure__caption"><a
+                                                        href="{{ slider.number_5.get_absolute_url }}">{{ slider.number_5.name }}</a><span>{{ slider.number_5.release_date }}</span>
+                                                </figcaption>
+                                            </figure>
+                                            <label class="wgh-slider-item__trigger" for="slide-5"
+                                                   title="Show product 1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="Section2">
+
+        <div class="MovieSlider">
+            <div class="SliderTitle">Recent 2022 Movies</div>
+            <main>
+                <section class="regular slider">
+
+                    {% for recent_serie in recent_2022_series %}
+                        <div class="item">
+                            <div class="itemImage">
+                                {% thumbnail recent_serie.banner "450x555" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                                <div class="hover">
+                                    <a href="{{ recent_serie.get_absolute_url }}"> <i class="fas fa-play"
+                                                                                      aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="MovieName">
+                                <h4>{{ recent_serie.name }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for recent_film in recent_2022_films %}
+                        <div class="item">
+                            <div class="itemImage">
+                                {% thumbnail recent_film.banner "450x555" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                                <div class="hover">
+                                    <a href="{{ recent_film.get_absolute_url }}"> <i class="fas fa-play"
+                                                                                     aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="MovieName">
+                                <h4>{{ recent_film.name }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for recent_film in recent_2022_films %}
+                        <div class="item">
+                            <div class="itemImage">
+                                {% thumbnail recent_film.banner "450x555" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                                <div class="hover">
+                                    <a href="{{ recent_film.get_absolute_url }}"> <i class="fas fa-play"
+                                                                                     aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="MovieName">
+                                <h4>{{ recent_film.name }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for recent_film in recent_2022_films %}
+                        <div class="item">
+                            <div class="itemImage">
+                                {% thumbnail recent_film.banner "450x555" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                                <div class="hover">
+                                    <a href="{{ recent_film.get_absolute_url }}"> <i class="fas fa-play"
+                                                                                     aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="MovieName">
+                                <h4>{{ recent_film.name }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </section>
+            </main>
+
+        </div>
+
+    </section>
+    <section class="Section3">
+        <div class="Section3BgEffect"></div>
+        <div class="Trends">
+            <div class="Trends-Title">Trends</div>
+            <!-- <div class="Category"></div> -->
+            <ul class="Catitems regular slider">
+                {% for genre in all_genres %}
+                    <li class="Catitem">
+                        <a href="{{ genre.get_absolute_url }}" style="text-decoration: none; color: inherit">
+                            {{ genre.genre }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="Trend-Items">
+
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/A-Quiet-Place-2018.jpg" alt="" class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>A-Quiet-Place</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/The-Climbers-2019.jpg" alt="" class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>The-Climbers</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/American-Murderer-2022-Poster-250x370.jpg" alt=""
+                             class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>American-Murderer</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/Doctor-Strange-in-the-Multiverse-of-Madness.jpg" alt=""
+                             class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>Doctor-Strange-MoM</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/The-Good-Nurse-2022-Poster.jpg" alt="" class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>The-Good-Nurse</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/Cryo-2022-250x370.jpg" alt="" class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>Cryo</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/Andor-2022-Poster-250x370.jpg" alt="" class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>Andor</h3>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-item-image">
+                        <img src="assets/img/TMImages/A-Quiet-Place-2018.jpg" alt="" class="Trend-Image">
+                        <div class="hover">
+                            <i class='fas fa-play'></i>
+                        </div>
+                    </div>
+                    <h3>A-Quiet-Place</h3>
+                </div>
+
+
+            </div>
+
+            <div class="SeeMore">
+                <button class="SeeMoreBtn">
+                    See more
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <section class="Section4">
+        <div class="movieBoxContainer">
+            <main>
+                {% for film in latest_films %}
+                    <article class="movieBox">
+                        <div class="TopPart">
+                            <div class="MovieImage">
+                                {% thumbnail film.banner "250x430" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                            </div>
+                            <div class="MovieInfo">
+
+                                <div class="MovieTitle">
+                                    <h2>{{ film.name }}</h2>
+                                </div>
+                                <div class="genre"><i class="fa fa-mask" aria-hidden="true"></i>Genre :
+                                    {% for genre in film.genre.all %}{{ genre }} {% endfor %}</div>
+                                <div class="IMDBrate"><i class="fa fa-imdb" aria-hidden="true"></i>IMDB
+                                    : {{ film.imdb }}</div>
+                                <div class="Dir"><i class="fa fa-user" aria-hidden="true"></i>Director
+                                    : {{ film.director }}</div>
+                                <div class="Cast"><i class="fas fa-users" aria-hidden="true"></i>Cast : {{ film.cast }}
+                                </div>
+
+                                <div class="Des">
+                                    <p>
+                                        {{ film.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Continue">
+                            <form action="{{ film.get_absolute_url }}">
+                                <button class="AdameMatlab"> Download</button>
+                            </form>
+                        </div>
+                    </article>
+                {% endfor %}
+                {% for serie in latest_series %}
+                    <article class="movieBox">
+                        <div class="TopPart">
+                            <div class="MovieImage">
+                                {% thumbnail serie.banner "250x430" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                            </div>
+                            <div class="MovieInfo">
+
+                                <div class="MovieTitle">
+                                    <h2>{{ serie.name }}</h2>
+                                </div>
+                                <div class="genre"><i class="fa fa-mask" aria-hidden="true"></i>Genre :
+                                    {% for genre in serie.genre.all %}{{ genre }} {% endfor %}</div>
+                                <div class="IMDBrate"><i class="fa fa-imdb" aria-hidden="true"></i>IMDB
+                                    : {{ serie.imdb }}</div>
+                                <div class="Dir"><i class="fa fa-user" aria-hidden="true"></i>Director
+                                    : {{ serie.director }}</div>
+                                <div class="Cast"><i class="fas fa-users" aria-hidden="true"></i>Cast : {{ serie.cast }}
+                                </div>
+
+                                <div class="Des">
+                                    <p>
+                                        {{ serie.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Continue">
+                            <form action="{{ serie.get_absolute_url }}">
+                                <button class="AdameMatlab">Download</button>
+                            </form>
+                        </div>
+                    </article>
+                {% endfor %}
+
+                <div class="SeeMore">
+                    <button class="SeeMoreBtn">
+                        See more
+                    </button>
+                </div>
+            </main>
+
+            <aside class="movieBoxFilters">
+                <div class="GenreTitle">
+                    Genres
+                </div>
+                {% render_partial 'home_app.views.genres' %}
+                <div class="YearTitle">
+                    Year
+                </div>
+                {% render_partial 'home_app.views.years' %}
+            </aside>
+        </div>
+
+
+    </section>
+    <div class="nav-mask">
+    </div>
+
+{% endblock %}

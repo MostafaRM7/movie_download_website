@@ -1,0 +1,80 @@
+{% extends '_shared/base.html' %}
+{% load thumbnail %}
+{% load render_partial %}
+
+{% block title %}
+    {{ genre|capfirst }}
+{% endblock %}
+
+{% block body %}
+    <section class="Section4">
+        <div class="movieBoxContainer">
+            <main>
+                {% for film in page %}
+                    <article class="movieBox">
+                        <div class="TopPart">
+                            <div class="MovieImage">
+                                {% thumbnail film.banner "294x458" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="The 5th Exotic">
+                                {% endthumbnail %}
+                            </div>
+                            <div class="MovieInfo">
+
+                                <div class="MovieTitle"><h2>{{ film.name }}</h2></div>
+                                <div class="genre"><i class="fa fa-mask" aria-hidden="true"></i>Genre :
+                                    {% for genre in film.genre.all %} {{ genre }}, {% endfor %}</div>
+                                <div class="IMDBrate"><i class="fa fa-imdb" aria-hidden="true"></i>IMDB
+                                    : {{ film.imdb }}</div>
+                                <div class="Dir"><i class="fa fa-user" aria-hidden="true"></i>Director : {{ film.imdb }}
+                                </div>
+                                <div class="Cast"><i class="fas fa-users" aria-hidden="true"></i>Cast : {{ film.cast }}
+                                </div>
+
+                                <div class="Des">
+                                    <p>
+                                        {{ film.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Continue">
+                            <form action="{{ film.get_absolute_url }}">
+                                <button class="AdameMatlab">Download</button>
+                            </form>
+                        </div>
+                    </article>
+                {% endfor %}
+
+                <ul class="pagination modal-5">
+                    {% if page.has_previous %}
+                        <li><a href="?page={{ page.previous_page_number }}" class="prev fa fa-arrow-left"> </a></li>
+                    {% endif %}
+                    {% for page_number in paginator.page_range %}
+                        <li><a href="?page={{ page_number }}"
+                               class="{% if page.number == page_number %} active {% endif %}">{{ page_number }}</a>
+                        </li>
+                    {% endfor %}
+
+                    {% if page.has_next %}
+                        <li><a href="?page={{ page.next_page_number }}" class="next fa fa-arrow-right"></a></li>
+                    {% endif %}
+                </ul>
+
+            </main>
+
+            <aside class="movieBoxFilters">
+                <div class="GenreTitle">
+                    Genres
+                </div>
+                {% render_partial 'home_app.views.genres' %}
+                <div class="YearTitle">
+                    Year
+                </div>
+                {% render_partial 'home_app.views.years' %}
+            </aside>
+        </div>
+
+    </section>
+    <script src="../../assets/js/infoScript.js"></script>
+{% endblock %}
