@@ -1,10 +1,8 @@
 from itertools import chain
-
 from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views import View
-
 from home_app.models import Slider
 from movie_app.models import Film, Serie, Genre, Date
 
@@ -20,8 +18,6 @@ class HomeView(View):
             'latest_series': Serie.objects.filter(is_active=True)[:5:-1],
             'recent_2022_series': Serie.objects.filter(end_date__date__year=2022, is_active=True)[:2:-1],
             'recent_2022_films': Film.objects.filter(release_date__date__year=2022, is_active=True)[:2:-1],
-            'all_genres': Genre.objects.all(),
-            'all_years': Date.objects.all()
         }
         return render(request, 'index.html', context)
 

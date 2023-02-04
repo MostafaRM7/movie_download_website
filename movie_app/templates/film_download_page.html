@@ -6,6 +6,18 @@
 {% endblock %}
 
 {% block body %}
+      <style>
+        .pageBg {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            filter: blur(15px);
+            background: url({% if film.background %}{{ film.background.url }}{% endif %}) no-repeat;
+            background-size: cover;
+            height: 960px;
+        }
+    </style>
     <div class="page">
         <div class="pageBg"></div>
 

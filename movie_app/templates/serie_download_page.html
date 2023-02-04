@@ -6,6 +6,18 @@
 {% endblock %}
 
 {% block body %}
+    <style>
+        .pageBg {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            filter: blur(15px);
+            background: url({% if serie.background %}{{ serie.background.url }}{% endif %}) no-repeat;
+            background-size: cover;
+            height: 960px;
+        }
+    </style>
     <div class="page">
         <img alt="" class="pageBg">
 
@@ -57,23 +69,20 @@
 
             </div>
             <div class="DownloadBox">
-                <div class="DWContainer">
-
-                    <div>
-                        {% for season in seasons %}
-                            <div class="DWTitle">
-                               Season {{ season.number }} - {{ season.quality }}
-                            </div>
+                {% for season in seasons %}
+                    <div class="DWContainer">
+                        <div class="DWTitle">Season: {{ season.number }} - {{ season.quality }}</div>
+                        <div class="DWItems" style="display: block;">
                             {% for part in parts %}
                                 {% if part.season.number == season.number %}
-                                    <p><span class="blt"> <a href="{{ part.file.url }}">Part {{ part.number }}</a></span></p>
+                                    <p><span class="blt"> <a
+                                            href="{{ part.file.url }}">Part {{ part.number }}</a></span></p>
                                 {% endif %}
                             {% endfor %}
-
-                        {% endfor %}
-
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
+
             </div>
             <div class="SInfoBox">
                 <div class="BoxHeader">
@@ -117,10 +126,10 @@
     <div class="nav-mask">
     </div>
     <script type="text/javascript">
-        $(".DWTitle").each((index,item) => {
-    $(item).on("click",() => {
-         $($("DWItems")[index]).slideToggle(200);
-    })
-})
+        $(".DWTitle").each((index, item) => {
+            $(item).on("click", () => {
+                $($("DWItems")[index]).slideToggle(200);
+            })
+        })
     </script>
 {% endblock %}
