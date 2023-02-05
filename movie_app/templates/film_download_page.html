@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-      <style>
+    <style>
         .pageBg {
             width: 100%;
             position: absolute;
@@ -125,11 +125,12 @@
     <div class="nav-mask">
     </div>
     <script type="text/javascript">
-        $(".DWTitle").each((index,item) => {
-    $(item).on("click",() => {
-         $($("DWItems")[index]).slideToggle(200);
-    })
-})
+
+        $(".DWTitle").each((index, item) => {
+            $(item).on("click", () => {
+                $($("DWItems")[index]).slideToggle(200);
+            })
+        })
 
 
     </script>

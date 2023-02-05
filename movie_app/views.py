@@ -16,7 +16,7 @@ class SerieComponent(DetailView):
         context['seasons'] = Season.objects.filter(serie__slug=loaded_serie.slug).all()
         context['parts'] = Part.objects.filter(season__serie__slug=loaded_serie.slug).all()
         context['related_series'] = Serie.objects.filter(genre=loaded_serie.genre.first()).exclude(pk=loaded_serie.id)
-
+        print(context)
         user_ip = get_client_ip(self.request)
         user_id = None
         if self.request.user.is_authenticated:

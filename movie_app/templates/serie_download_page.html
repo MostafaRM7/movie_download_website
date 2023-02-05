@@ -33,16 +33,18 @@
                     <div class="RateSaveBox">
 
                         <div class="RateBox">
-                            <input type="radio" id="star5" name="rate" value="5">
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4">
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3">
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2">
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1">
-                            <label for="star1" title="text">1 star</label>
+                            <div class="RateStars">
+                                <input type="radio" id="star5" name="rate" value="5">
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4">
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3">
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2">
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1">
+                                <label for="star1" title="text">1 star</label>
+                            </div>
                         </div>
                         <div class="saveBox">
                             <p><i class="fa fa-bookmark-o"> Watch later </i></p>
@@ -72,11 +74,12 @@
                 {% for season in seasons %}
                     <div class="DWContainer">
                         <div class="DWTitle">Season: {{ season.number }} - {{ season.quality }}</div>
-                        <div class="DWItems" style="display: block;">
+                        <div class="DWItems">
                             {% for part in parts %}
-                                {% if part.season.number == season.number %}
-                                    <p><span class="blt"> <a
-                                            href="{{ part.file.url }}">Part {{ part.number }}</a></span></p>
+                                {% if part.season.number == season.number and part.season.quality == season.quality %}
+                                    <p><span class="blt"> <a style="text-decoration: none;"
+                                                             href="{{ part.file.url }}">Part {{ part.number }}</a></span>
+                                    </p>
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -128,7 +131,7 @@
     <script type="text/javascript">
         $(".DWTitle").each((index, item) => {
             $(item).on("click", () => {
-                $($("DWItems")[index]).slideToggle(200);
+                $($(".DWItems")[index]).slideToggle(200);
             })
         })
     </script>
