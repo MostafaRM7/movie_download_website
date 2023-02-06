@@ -116,6 +116,7 @@
             </div>
         </div>
     </div>
+    <!-- 2022 movies -->
     <section class="Section2">
 
         <div class="MovieSlider">
@@ -200,9 +201,9 @@
     </section>
     <section class="Section3">
         <div class="Section3BgEffect"></div>
+        <!-- Recently updated series -->
         <div class="Trends">
             <div class="Trends-Title">Trends</div>
-            <!-- <div class="Category"></div> -->
             <ul class="Catitems regular slider">
                 {% for genre in all_genres %}
                     <li class="Catitem">
@@ -212,82 +213,19 @@
                 {% endfor %}
             </ul>
             <div class="Trend-Items">
-
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/A-Quiet-Place-2018.jpg" alt="" class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
+                {% for serie in Recently_updated.series.all %}
+                    <div class="trend-item">
+                        <div class="trend-item-image">
+                            {% thumbnail serie.banner "270x405" crop="center" as im %}
+                                <img src="{{ im.url }}" alt="">
+                            {% endthumbnail %}
+                            <div class="hover">
+                                <a href="{{ serie.get_absolute_url }}"><i class='fas fa-play'></i></a>
+                            </div>
                         </div>
+                        <h3>{{ serie.name }}</h3>
                     </div>
-                    <h3>A-Quiet-Place</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/The-Climbers-2019.jpg" alt="" class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>The-Climbers</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/American-Murderer-2022-Poster-250x370.jpg" alt=""
-                             class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>American-Murderer</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/Doctor-Strange-in-the-Multiverse-of-Madness.jpg" alt=""
-                             class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>Doctor-Strange-MoM</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/The-Good-Nurse-2022-Poster.jpg" alt="" class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>The-Good-Nurse</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/Cryo-2022-250x370.jpg" alt="" class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>Cryo</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/Andor-2022-Poster-250x370.jpg" alt="" class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>Andor</h3>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-item-image">
-                        <img src="assets/img/TMImages/A-Quiet-Place-2018.jpg" alt="" class="Trend-Image">
-                        <div class="hover">
-                            <i class='fas fa-play'></i>
-                        </div>
-                    </div>
-                    <h3>A-Quiet-Place</h3>
-                </div>
-
+                {% endfor %}
 
             </div>
 

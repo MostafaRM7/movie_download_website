@@ -78,7 +78,7 @@
                     </div>
                     <div>
                         {% for quality in film_qualities %}
-                            <p><span class="blt"> {{ quality }}</span></p>
+                            <p><span class="blt"><a href="{{ quality.file.url }}">{{ quality }}</a></span></p>
                         {% endfor %}
                     </div>
                 </div>
@@ -128,7 +128,7 @@
 
         $(".DWTitle").each((index, item) => {
             $(item).on("click", () => {
-                $($("DWItems")[index]).slideToggle(200);
+                $($(".DWItems")[index]).slideToggle(200);
             })
         })
 
