@@ -17,7 +17,7 @@
                             <img src="{{ im.url }}" alt="The 5th Exotic">
                         {% endthumbnail %}
                         <div class="hover">
-                            <i class="fas fa-play" aria-hidden="true"></i>
+                            <a href="{{ film.get_absolute_url }}"><i class="fas fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <h3>{{ film.name }}</h3>
