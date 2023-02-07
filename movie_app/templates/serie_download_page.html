@@ -46,7 +46,8 @@
                                 <label for="star1" title="text">1 star</label>
                             </div>
                         </div>
-                        <div class="saveBox">
+                        {% if user.is_authenticated %}
+                            <div class="saveBox">
                             <button style="background-color: transparent; border-color: transparent; cursor: pointer">
                                 <i id="favorite" class="{% if is_favorite %}
                                     bi-bookmark-plus-fill
@@ -56,6 +57,7 @@
                                    onclick="{% if is_favorite %}remove_from_favorite('{{ serie.slug }}'){% else %}add_to_favorite('{{ serie.slug }}'){% endif %}"></i>
                             </button>
                         </div>
+                        {% endif %}
 
                     </div>
                     <div class="BoxHeader">

@@ -52,7 +52,7 @@ class LoginView(View):
 class LogoutView(View):
     def get(self, request: HttpRequest):
         logout(request)
-        return redirect(self.request.META.get('HTTP_REFERER'))
+        return redirect(reverse('home-page'))
 
 
 class RegisterView(View):
@@ -91,6 +91,7 @@ class DashboardView(View):
         return JsonResponse({'user_email': user.email})
 
 
+@method_decorator(login_required(), name='dispatch')
 class FavoriteMovieView(View):
     @staticmethod
     def get(request: HttpRequest):
@@ -112,6 +113,7 @@ class FavoriteMovieView(View):
             return JsonResponse({'success': False})
 
 
+@method_decorator(login_required(), name='dispatch')
 class RemoveFavoriteMovieView(View):
     @staticmethod
     def get(request: HttpRequest):
