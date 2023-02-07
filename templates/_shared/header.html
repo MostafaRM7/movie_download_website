@@ -34,8 +34,11 @@
             </div>
             <div>
                 {% if user.is_authenticated %}
-                    <button class="LoginButt"><a href="{% url 'logout' %}"
-                                                 style="text-decoration: none; color: inherit">Logout</a><i class="icon-logout"></i></button>
+                    <div class="userDashboard">
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </div>
                 {% else %}
                     <button class="LoginButt"><a href="{% url 'login-page' %}"
                                                  style="text-decoration: none; color: inherit">Login</a></button>

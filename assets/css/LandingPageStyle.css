@@ -130,10 +130,11 @@ nav .navbarList .navbarItem {
     font-size: 22px;
     color: rgb(0, 0, 0);
 }
-.navRightPart .searchBox
-{
+
+.navRightPart .searchBox {
     margin-right: 10px;
 }
+
 .searchBox input {
     position: relative;
     outline: none;
@@ -156,6 +157,21 @@ nav .navbarList .navbarItem {
     border-radius: 15px 15px 0 0;
 }
 
+.userDashboard {
+    width: 44px;
+    height: 40px;
+    background-color: #00A647;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.userDashboard a i {
+    font-size: 25px;
+    color: white;
+}
+
 .ui-menu {
     width: 270px;
     margin-top: 10px;
@@ -166,11 +182,12 @@ nav .navbarList .navbarItem {
     outline: none;
     background: none;
 }
+
 .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
     background: none !important;
     font-weight: normal !important;
     border: none !important;
-} 
+}
 
 .ui-menu img {
     width: 100%;
@@ -184,17 +201,17 @@ nav .navbarList .navbarItem {
     /* object-fit: cover;
     vertical-align: middle; */
 }
-.ui-menu li:hover img
-{
+
+.ui-menu li:hover img {
     transform: scale(1.1)
 }
-.ui-menu .SearchItemEffect
-{
+
+.ui-menu .SearchItemEffect {
     width: 289px;
     height: 85px;
     left: 0;
     position: absolute;
-    background: radial-gradient(circle, rgba(0,212,255,0.08735994397759106) 50%, rgba(0,0,0,0.8184523809523809) 100%);
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.08735994397759106) 50%, rgba(0, 0, 0, 0.8184523809523809) 100%);
     z-index: -1;
 }
 
@@ -213,8 +230,8 @@ nav .navbarList .navbarItem {
     line-height: 75px;
     z-index: 2;
 }
-.ui-menu li span::after
-{
+
+.ui-menu li span::after {
     content: ' ';
     width: 0;
     height: 3px;
@@ -223,16 +240,18 @@ nav .navbarList .navbarItem {
     display: block;
     transition: 300ms;
 }
-.ui-menu li:hover span::after
-{
+
+.ui-menu li:hover span::after {
     width: 100%;
 }
+
 .navRightPart {
     display: flex;
     align-items: center;
     margin-right: 15px;
-   
+
 }
+
 .wgh-slider {
     position: relative;
     top: 60%;
@@ -774,9 +793,8 @@ main > h1 {
     position: absolute;
     z-index: -1;
     backdrop-filter: blur(7px);
-    background-image: linear-gradient(0deg, rgb(0 0 0) 10%,rgba(86, 126, 0, 0), rgb(0 0 0) 90%);
+    background-image: linear-gradient(0deg, rgb(0 0 0) 10%, rgba(86, 126, 0, 0), rgb(0 0 0) 90%);
 }
-
 
 
 .Trends {
@@ -1258,382 +1276,389 @@ footer .UpperPart .WebLogo {
     }
 }
 
-@media only screen and (max-width : 950px)
-{
-  .wgh-slider-item-figure
-  {
-    width: 252px;
-    height: 375px;
-  }
-  nav 
-  {
-    display: block;
-    z-index: 10;
-  }
-  nav  .navRightPart
-  {
-    float: right;
-  }
-  nav .navbarList
-  {
-    display: none;
-    margin: 50px 0 20px 0;
-    width: 100%;
-  }
-  .nav-mask
-  {
-    display: none;
-    content: '';
-    position: fixed;
-    z-index: 6;
-    width: 100%;
-    height: 100%;
-    filter: brightness(0.7);
-    top: 0;
-    backdrop-filter: blur(2px);
-    cursor: pointer;
-  }
-  nav .navbarList .navbarItem
-  {
-    margin: 20px auto 0 auto;
-    text-align: center;
-  }
-  .navbarItem:after
-  {
-    transition: 400ms;
-  }
-  .navbarItem:hover::after
-  {
-  width: 50%;
-  }
-  nav .ToggleButton
-  {
-    display: block;
-  }
-  .MovieTitle h2
-  {
-    font-size: 26px;
-  }
-  .wgh-slider-item__inner
-  {
-    width: 210px;
-    height: 300px;
-  }
-  .movieBox
-  {
-    position: relative;
-    height: 560px;
-    padding-bottom: 10px;
-  }
-  .MovieInfo
-  {
-    height: 380px;
-    align-items: stretch;
-  }
-  .TopPart
-  {
-    justify-content: center;
-  }
-  .Continue
-  {
-    position: absolute;
-    top: 260px;
-    right: 20px;
-  }
-  .Des
-  {
-    position: absolute;
-    left: 30px;
-    bottom: 10px;
-  }
-  .Trend-Items
-  {
-    grid-template-columns: auto auto;
-  }
-  footer .UpperPart
-  {
-    display: block;
-    text-align: center;
-  }
-  footer .UpperPart .ContactINFO
-  {
-    width: 95%;
-    text-align: center;
-    margin: 10px auto 0 auto;
-    border-left: none;
-    border-bottom: 2px solid white;
-  }
-  footer .UpperPart .ContactINFO div
-  {
-   text-align: center;
-  }
-  
-  .movieBoxContainer .PaginationCon
-  {
-    width: 85%;
-    margin: 30px auto 0 auto;
-  }
-  .PaginationCon .Pagination li 
-  {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-  .PaginationCon .goForward
-  {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-}
-@media only  screen and (min-width : 632px) and (max-width : 753px) {
-  .Continue {
-    top: 238px;
-   }
-   .AdameMatlab
-   {
-    width: 190px;
-    height: 54px;
-   }
-   .MovieTitle h2
-   {
-    font-size: 23px;
-   }
-   .genre, .IMDBrate, .Dir, .Cast, .year, .country, .Lan {
-    margin: 8px 0 17px;
-  }
-}
-@media only screen and (max-width : 630px)
-{  
-  .wgh-slider__viewbox
-{
-  perspective: 300vw;
-}
-.wgh-slider__container
-{
-  width: 278px;
-  left: -76px;
-}
-  .Trend-Items
-  {
-    grid-template-columns: auto auto;
-  }
-  .wgh-slider-item-figure
-  {
-    width: 206px;
-    height: 304px;
-  }
-  .Section2
-  {
-   height: 606px;
-  }
-  .trend-item-image .Trend-Image
-  {
-       width: 226px;
-    height: 330px;
-  }
-  .MovieSlider .slick-slide
-  {
-    width: 242px;
-  }
-  .MovieSlider .slick-slide .itemImage
-  {
-    height: 345px;
-  }
-  .movieBoxContainer .MovieImage
-  {
-    margin-left: 10px;
-  }
-  .movieBoxContainer .TopPart
-  {
-    align-items: unset;
-  }
-  .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child)
-  {
-    font-size: 12px;
-    margin-top: 10px;
-  }
-  .movieBox  .Continue
-  {
-    width: unset;
-    top: 230px;
-    right: 30px;
-  }
-  .movieBox .Continue .AdameMatlab
-  {
-    width: 155px;
-    height: 45px;
-    font-size: 17px;
-  }
-  .movieBoxContainer .TopPart .MovieInfo .Des
-  {
-    left: 8px;
-  }
-  .movieBoxContainer .TopPart .MovieInfo .Des p 
-  {
-    font-size: 12px;
-  }
-  .movieBoxContainer .MovieInfo
-  {
-    margin-left: 12px;
-    height: 300px;
-    margin-top: 0;
-  }
-  .movieBoxContainer .movieBox  .MovieTitle h2
-  {
-    font-size: 22px;
-  }
-}
-@media only screen and (max-width : 515px)
-{
-  .Trend-Items
-  {
-    grid-template-columns: auto;
-  }
-}
-@media only screen and (max-width : 416px)
-{
-  .movieBoxContainer .movieBox .MovieTitle h2
-  {
-    font-size: 19px;
-  }
-  .GenreFilter .Genre, .Year
-  {
-    font-size: 16px;
-  }
-  .searchBox input
-  {
-    width: 151px;
-  }
-  .searchBox input:hover {
-    width: 170px;
-}
-  .SliderHeader .HSliderTitle
-  {
-    font-size: 20px;
-  }
-  .wgh-slider-item-figure {
-    width: 197px;
-    height: 291px;
-}
-  .wgh-slider__container {
-    width: 265px;
-    left: -99px;
-}
- footer .UpperPart .ContactINFO div
- {
-  font-size: 18px;
- }
- .SoMeIcons
- {
-  margin-left: 26px;
- }
- .designer 
- {
-  margin-right: 19px;
- }
-  .movieBoxContainer .PaginationCon
-  {
-    width: 85%;
-    margin: 30px auto 0 auto;
-  }
-  .PaginationCon .Pagination li  , .goForward
-  {
-    width: 46px;
-    height: 46px;
-    line-height: 46px;
-    margin: 0 10px 0 10px;
-  }
-  footer .UpperPart .WebLogo
-  {
-    width: 250px;
-  }
-  .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child) i 
-  {
-    font-size: 16px;
-  }
-  .movieBox .Continue
-  {
-    top: 197px;
-    right: 21px;
-  }
-  .movieBox .Continue .AdameMatlab {
-    width: 149px;
-    height: 44px;
-    font-size: 17px;
-  }
+@media only screen and (max-width: 950px) {
+    .wgh-slider-item-figure {
+        width: 252px;
+        height: 375px;
+    }
+
+    nav {
+        display: block;
+        z-index: 10;
+    }
+
+    nav .navRightPart {
+        float: right;
+    }
+
+    nav .navbarList {
+        display: none;
+        margin: 50px 0 20px 0;
+        width: 100%;
+    }
+
+    .nav-mask {
+        display: none;
+        content: '';
+        position: fixed;
+        z-index: 6;
+        width: 100%;
+        height: 100%;
+        filter: brightness(0.7);
+        top: 0;
+        backdrop-filter: blur(2px);
+        cursor: pointer;
+    }
+
+    nav .navbarList .navbarItem {
+        margin: 20px auto 0 auto;
+        text-align: center;
+    }
+
+    .navbarItem:after {
+        transition: 400ms;
+    }
+
+    .navbarItem:hover::after {
+        width: 50%;
+    }
+
+    nav .ToggleButton {
+        display: block;
+    }
+
+    .MovieTitle h2 {
+        font-size: 26px;
+    }
+
+    .wgh-slider-item__inner {
+        width: 210px;
+        height: 300px;
+    }
+
+    .movieBox {
+        position: relative;
+        height: 560px;
+        padding-bottom: 10px;
+    }
+
+    .MovieInfo {
+        height: 380px;
+        align-items: stretch;
+    }
+
+    .TopPart {
+        justify-content: center;
+    }
+
+    .Continue {
+        position: absolute;
+        top: 260px;
+        right: 20px;
+    }
+
+    .Des {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+    }
+
+    .Trend-Items {
+        grid-template-columns: auto auto;
+    }
+
+    footer .UpperPart {
+        display: block;
+        text-align: center;
+    }
+
+    footer .UpperPart .ContactINFO {
+        width: 95%;
+        text-align: center;
+        margin: 10px auto 0 auto;
+        border-left: none;
+        border-bottom: 2px solid white;
+    }
+
+    footer .UpperPart .ContactINFO div {
+        text-align: center;
+    }
+
+    .movieBoxContainer .PaginationCon {
+        width: 85%;
+        margin: 30px auto 0 auto;
+    }
+
+    .PaginationCon .Pagination li {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .PaginationCon .goForward {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
 }
 
-@media only screen and (max-width : 376px)
-{
-  .LoginButt
-  {
-    width: 81px;
-  }
-  .searchBox input {
-    width: 143px;
-  }
-  .searchBox input:hover {
-    width: 150px;
-   }
-  .trend-item-image .Trend-Image {
-    width: 232px;
-  }
-  .wgh-slider__container {
-    left: -127px;
-  }
-  
-  .movieBoxContainer .movieBox .MovieTitle h2 {
-    font-size: 17px;
-  }
-  .movieBox .Continue .AdameMatlab {
-    width: 142px;
-    height: 40px;
-    font-size: 15px;
+@media only  screen and (min-width: 632px) and (max-width: 753px) {
+    .Continue {
+        top: 238px;
+    }
+
+    .AdameMatlab {
+        width: 190px;
+        height: 54px;
+    }
+
+    .MovieTitle h2 {
+        font-size: 23px;
+    }
+
+    .genre, .IMDBrate, .Dir, .Cast, .year, .country, .Lan {
+        margin: 8px 0 17px;
+    }
 }
-  .movieBox .Continue {
-    right: 5px;
+
+@media only screen and (max-width: 630px) {
+    .wgh-slider__viewbox {
+        perspective: 300vw;
+    }
+
+    .wgh-slider__container {
+        width: 278px;
+        left: -76px;
+    }
+
+    .Trend-Items {
+        grid-template-columns: auto auto;
+    }
+
+    .wgh-slider-item-figure {
+        width: 206px;
+        height: 304px;
+    }
+
+    .Section2 {
+        height: 606px;
+    }
+
+    .trend-item-image .Trend-Image {
+        width: 226px;
+        height: 330px;
+    }
+
+    .MovieSlider .slick-slide {
+        width: 242px;
+    }
+
+    .MovieSlider .slick-slide .itemImage {
+        height: 345px;
+    }
+
+    .movieBoxContainer .MovieImage {
+        margin-left: 10px;
+    }
+
+    .movieBoxContainer .TopPart {
+        align-items: unset;
+    }
+
+    .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child) {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .movieBox .Continue {
+        width: unset;
+        top: 230px;
+        right: 30px;
+    }
+
+    .movieBox .Continue .AdameMatlab {
+        width: 155px;
+        height: 45px;
+        font-size: 17px;
+    }
+
+    .movieBoxContainer .TopPart .MovieInfo .Des {
+        left: 8px;
+    }
+
+    .movieBoxContainer .TopPart .MovieInfo .Des p {
+        font-size: 12px;
+    }
+
+    .movieBoxContainer .MovieInfo {
+        margin-left: 12px;
+        height: 300px;
+        margin-top: 0;
+    }
+
+    .movieBoxContainer .movieBox .MovieTitle h2 {
+        font-size: 22px;
+    }
 }
-  .movieBoxContainer .TopPart .MovieInfo .Des {
-    left: 3px;
-    border-radius: 6px;
-  }
-  .movieBoxContainer .PaginationCon {
-  width: 93%;
-  }
-  .designer p
-  {
-    font-size: 20px;
-  }
-  .SoMeIcons {
-    margin-left: 9px;
-  }
-  .SoMeIcons i
-  {
-    font-size: 23px;
-  }
-  footer .UpperPart .WebLogo
-  {
-    width: 235px;
-  }
-  footer .UpperPart .ContactINFO div
-  {
-   font-size: 17px;
-  }
+
+@media only screen and (max-width: 515px) {
+    .Trend-Items {
+        grid-template-columns: auto;
+    }
 }
-@media only screen and (max-width : 361px)
-{
-  .movieBox .Continue .AdameMatlab {
-    width: 134px;
-    height: 38px;
-    font-size: 13px;
+
+@media only screen and (max-width: 416px) {
+    .movieBoxContainer .movieBox .MovieTitle h2 {
+        font-size: 19px;
+    }
+
+    .GenreFilter .Genre, .Year {
+        font-size: 16px;
+    }
+
+    .searchBox input {
+        width: 151px;
+    }
+
+    .searchBox input:hover {
+        width: 170px;
+    }
+
+    .SliderHeader .HSliderTitle {
+        font-size: 20px;
+    }
+
+    .wgh-slider-item-figure {
+        width: 197px;
+        height: 291px;
+    }
+
+    .wgh-slider__container {
+        width: 265px;
+        left: -99px;
+    }
+
+    footer .UpperPart .ContactINFO div {
+        font-size: 18px;
+    }
+
+    .SoMeIcons {
+        margin-left: 26px;
+    }
+
+    .designer {
+        margin-right: 19px;
+    }
+
+    .movieBoxContainer .PaginationCon {
+        width: 85%;
+        margin: 30px auto 0 auto;
+    }
+
+    .PaginationCon .Pagination li, .goForward {
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        margin: 0 10px 0 10px;
+    }
+
+    footer .UpperPart .WebLogo {
+        width: 250px;
+    }
+
+    .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child) i {
+        font-size: 16px;
+    }
+
+    .movieBox .Continue {
+        top: 197px;
+        right: 21px;
+    }
+
+    .movieBox .Continue .AdameMatlab {
+        width: 149px;
+        height: 44px;
+        font-size: 17px;
+    }
 }
-  footer .UpperPart .WebLogo
-  {
-    width: 220px;
-  }
-  footer .UpperPart .ContactINFO div
-  {
-   font-size: 16px;
-  }
+
+@media only screen and (max-width: 376px) {
+    .LoginButt {
+        width: 81px;
+    }
+
+    .searchBox input {
+        width: 143px;
+    }
+
+    .searchBox input:hover {
+        width: 150px;
+    }
+
+    .trend-item-image .Trend-Image {
+        width: 232px;
+    }
+
+    .wgh-slider__container {
+        left: -127px;
+    }
+
+    .movieBoxContainer .movieBox .MovieTitle h2 {
+        font-size: 17px;
+    }
+
+    .movieBox .Continue .AdameMatlab {
+        width: 142px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .movieBox .Continue {
+        right: 5px;
+    }
+
+    .movieBoxContainer .TopPart .MovieInfo .Des {
+        left: 3px;
+        border-radius: 6px;
+    }
+
+    .movieBoxContainer .PaginationCon {
+        width: 93%;
+    }
+
+    .designer p {
+        font-size: 20px;
+    }
+
+    .SoMeIcons {
+        margin-left: 9px;
+    }
+
+    .SoMeIcons i {
+        font-size: 23px;
+    }
+
+    footer .UpperPart .WebLogo {
+        width: 235px;
+    }
+
+    footer .UpperPart .ContactINFO div {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 361px) {
+    .movieBox .Continue .AdameMatlab {
+        width: 134px;
+        height: 38px;
+        font-size: 13px;
+    }
+
+    footer .UpperPart .WebLogo {
+        width: 220px;
+    }
+
+    footer .UpperPart .ContactINFO div {
+        font-size: 16px;
+    }
 }

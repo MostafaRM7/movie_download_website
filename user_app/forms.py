@@ -9,7 +9,7 @@ class RegisterForm(Form):
         label='Email',
         widget=forms.EmailInput(
             attrs={
-                'class': 'form-control'
+                'class': 'formInput'
             }
         ),
         validators=[
@@ -20,7 +20,7 @@ class RegisterForm(Form):
         label='Password',
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control'
+                'class': 'formInput'
             }
         ),
         validators=[
@@ -32,7 +32,7 @@ class RegisterForm(Form):
         label='Confirm password',
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control'
+                'class': 'formInput'
             }
         ),
         validators=[

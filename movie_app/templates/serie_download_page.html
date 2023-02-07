@@ -47,7 +47,14 @@
                             </div>
                         </div>
                         <div class="saveBox">
-                            <p><i class="fa fa-bookmark-o"> Watch later </i></p>
+                            <button style="background-color: transparent; border-color: transparent; cursor: pointer">
+                                <i id="favorite" class="{% if is_favorite %}
+                                    bi-bookmark-plus-fill
+                                {% else %}
+                                    bi-bookmark-plus
+                                {% endif %} "
+                                   onclick="{% if is_favorite %}remove_from_favorite('{{ serie.slug }}'){% else %}add_to_favorite('{{ serie.slug }}'){% endif %}"></i>
+                            </button>
                         </div>
 
                     </div>
@@ -72,7 +79,7 @@
             </div>
             <div class="DownloadBox">
                 {% for season in seasons %}
-                        <div class="DWContainer">
+                    <div class="DWContainer">
                         <div class="DWTitle">Season: {{ season.number }} - {{ season.quality }}</div>
                         <div class="DWItems">
                             {% for part in parts %}

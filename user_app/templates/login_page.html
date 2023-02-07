@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container1">
+    <div class="container1 login">
         <div class="background-mask"></div>
         <form class="LoginBox" action="{% url 'login-page' %}" method="post">
             <div class="Title">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="LoginBoxFooter">
-                <p style="font-size: 14px; font-weight: bold">Don't you have account? <span>Sign up</span></p>
+                <p style="font-size: 14px; font-weight: bold">Don't you have account? <span><a href="{% url 'register-page' %}">Sign up</a></span></p>
             </div>
 
         </form>

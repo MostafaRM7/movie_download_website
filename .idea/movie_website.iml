@@ -23,6 +23,7 @@
     <orderEntry type="library" name="baguettebox.js" level="application" />
     <orderEntry type="library" name="jquery-3.6.0" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
+    <orderEntry type="library" name="bootstrap-icons" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

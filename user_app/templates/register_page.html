@@ -5,21 +5,35 @@
 {% endblock %}
 
 {% block body %}
-    <main class="page registration-page">
-        <section class="clean-block clean-form dark">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">Registration</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
-                </div>
-                <form action="{% url 'register-page' %}" method="post">
-                    {% csrf_token %}
-                    {{ register_form }}
-                    <br>
-                    <button class="btn btn-primary" type="submit">Sign Up</button>
-                </form>
-            </div>
-        </section>
-    </main>
+<div class="container1 sign">
+    <div class="background-mask"></div>
+    <form class="LoginBox" action="{% url 'register-page' %}" method="post">
+        <div class="Title">
+            <h1>Sign up</h1>
+        </div>
+        <div class="formInput">
+            {{ register_form }}
+            {{ register_form.errors }}
+        </div>
+        {% csrf_token %}
+       <div class="confirmBox">
+        <input type="submit" class="SigninButt" value="Sign up">
+       </div>
+
+        <div class="signsep separate">
+            <div></div>
+            <p>Or</p>
+            <div></div>
+        </div>
+
+      <div class="GoogleLogin">
+            <i class="fa fa-google"></i>
+             <p>Continue with Google</p>
+      </div>
+
+
+    </form>
+</div>
+<div class="nav-mask">
+</div>
 {% endblock %}

@@ -1,20 +1,28 @@
 from django.contrib.auth import login, logout
-from django.http import HttpRequest
+from django.contrib.auth.decorators import login_required
+from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.crypto import get_random_string
+from django.utils.decorators import method_decorator
 from django.views import View
+
+from movie_app.models import Serie, Film
 from .forms import LoginFrom, RegisterForm
 from .models import User
 
 
 class LoginView(View):
 
-    def get(self, request: HttpRequest):
+    @staticmethod
+    def get(request: HttpRequest):
+        if request.user.is_authenticated:
+            return redirect(reverse('home-page'))
         context = {'login_form': LoginFrom()}
         return render(request, 'login_page.html', context)
 
-    def post(self, request: HttpRequest):
+    @staticmethod
+    def post(request: HttpRequest):
         login_form = LoginFrom(request.POST)
         if login_form.is_valid():
             user_email = login_form.cleaned_data.get('email')
@@ -48,11 +56,13 @@ class LogoutView(View):
 
 
 class RegisterView(View):
-    def get(self, request: HttpRequest):
+    @staticmethod
+    def get(request: HttpRequest):
         context = {'register_form': RegisterForm()}
         return render(request, 'register_page.html', context)
 
-    def post(self, request: HttpRequest):
+    @staticmethod
+    def post(request: HttpRequest):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user_email = register_form.cleaned_data.get('email')
@@ -71,3 +81,53 @@ class RegisterView(View):
                 return render(request, 'success.html')
         else:
             return render(request, 'error.html')
+
+
+@method_decorator(login_required(), name='dispatch')
+class DashboardView(View):
+    @staticmethod  # TODO: add user profile
+    def get(request: HttpRequest):
+        user = request.user
+        return JsonResponse({'user_email': user.email})
+
+
+class FavoriteMovieView(View):
+    @staticmethod
+    def get(request: HttpRequest):
+        slug = request.GET.get('slug')
+        user = request.user
+        serie = Serie.objects.filter(slug=slug).first()
+        if slug is not None and user is not None:
+            if serie is not None:
+                user.saved_series.add(serie)
+                return JsonResponse({'success': True})
+
+            film = Film.objects.filter(slug=slug).first()
+            if film is not None:
+                user.saved_films.add(film)
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False})
+        else:
+            return JsonResponse({'success': False})
+
+
+class RemoveFavoriteMovieView(View):
+    @staticmethod
+    def get(request: HttpRequest):
+        slug = request.GET.get('slug')
+        user = request.user
+        serie = Serie.objects.filter(slug=slug).first()
+        if slug is not None and user is not None:
+            if serie is not None:
+                user.saved_series.remove(serie)
+                return JsonResponse({'success': True})
+
+            film = Film.objects.filter(slug=slug).first()
+            if film is not None:
+                user.saved_films.remove(film)
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False})
+        else:
+            return JsonResponse({'success': False})

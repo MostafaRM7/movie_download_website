@@ -140,7 +140,7 @@ class FilmByQuality(Model):
 class SerieVisit(Model):
     serie = models.ForeignKey(to=Serie, on_delete=models.CASCADE)
     ip = models.CharField(max_length=30)
-    user = models.ForeignKey(to=User, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(to='user_app.User', null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         if self.user is not None:
@@ -154,7 +154,7 @@ class SerieVisit(Model):
 class FilmVisit(Model):
     film = models.ForeignKey(to=Film, on_delete=models.CASCADE)
     ip = models.CharField(max_length=30)
-    user = models.ForeignKey(to=User, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(to='user_app.User', null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         name = ''
@@ -166,9 +166,6 @@ class FilmVisit(Model):
         return name
 
 
-class Movie(Model):
-    film = models.ForeignKey(Film, on_delete=models.CASCADE)
-    serie = models.ForeignKey(Serie, on_delete=models.CASCADE)
 
 
 

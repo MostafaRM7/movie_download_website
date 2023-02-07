@@ -1,6 +1,6 @@
 from django.db.models import QuerySet
 
-from movie_app.models import Film, Movie
+from movie_app.models import Film
 
 
 def get_client_ip(request):
@@ -21,13 +21,3 @@ def related_finder(movie):
                 continue
     return related
 
-
-class MovieQuerySet(QuerySet):
-    @staticmethod
-    def get_movies_queryset(fqs, sqs):
-        result = []
-        for film in fqs:
-            result.append(Movie(film=film))
-        for serie in sqs:
-            result.append(Movie(serie=serie))
-        return QuerySet(result)

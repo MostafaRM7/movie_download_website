@@ -16,6 +16,7 @@ class SerieComponent(DetailView):
         context['seasons'] = Season.objects.filter(serie__slug=loaded_serie.slug).all()
         context['parts'] = Part.objects.filter(season__serie__slug=loaded_serie.slug).all()
         context['related_series'] = Serie.objects.filter(genre=loaded_serie.genre.first()).exclude(pk=loaded_serie.id)
+        context['is_favorite'] = self.request.user.saved_series.filter(pk=loaded_serie.id).exists()
         user_ip = get_client_ip(self.request)
         user_id = None
         if self.request.user.is_authenticated:
@@ -40,6 +41,7 @@ class FilmComponent(DetailView):
         loaded_film = self.object
         context['film_qualities'] = FilmByQuality.objects.prefetch_related().filter(film__slug=loaded_film.slug).all()
         context['related_films'] = Film.objects.filter(genre=loaded_film.genre.first()).exclude(pk=loaded_film.id)
+        context['is_favorite'] = self.request.user.saved_films.filter(pk=loaded_film.id).exists()
 
         user_ip = get_client_ip(self.request)
         user_id = None

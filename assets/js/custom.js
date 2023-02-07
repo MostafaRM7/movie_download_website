@@ -54,5 +54,30 @@ function set_wall(id) {
 
     }
 }
+function remove_from_favorite(slug) {
+    console.log(slug)
+    $.ajax({
+        url: '../../user/remove-favorite-movie/?slug=' + slug,
+        type: 'GET',
+        success: function (data) {
+            if (data.success == true) {
+                $("#favorite").attr('class', 'bi-bookmark-plus')
+                $("#favorite").attr('onclick', 'add_to_favorite("' + slug + '")')
+            }
+        }
+    })
+}
 
-
+function add_to_favorite(slug) {
+    console.log(slug)
+    $.ajax({
+        url: '../../user/favorite-movie/?slug=' + slug,
+        type: 'GET',
+        success: function (data) {
+            if (data.success == true) {
+                $("#favorite").attr('class', 'bi-bookmark-plus-fill')
+                $("#favorite").attr('onclick', 'remove_from_favorite("' + slug + '")')
+            }
+        }
+    })
+}

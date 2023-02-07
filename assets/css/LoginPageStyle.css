@@ -12,35 +12,48 @@ body
 {
     width: 100%;
     position: relative;
-    height: 740px;
+    z-index: 0;
+    padding: 20px 0 20px 0;
+}
+.login
+{
     background: url('../img/login/Loginbg.jpg') no-repeat center;
     background-size: cover;
-    z-index: 0;
 }
+.sign
+{
+    background: url('../img/login/Signinbg.jpg') no-repeat center;
+    background-size: cover;
+}
+
 .background-mask
 {
     width: 100%;
     height: 100%;
+    position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 0;
     backdrop-filter: blur(15px);
 }
 .LoginBox
 {
-    position: absolute;
     z-index: 2;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
     border: 2px solid rgb(166, 166, 166);
-    width: 450px;
+    width: 30%;
     margin: 0 auto 0 auto;
     padding: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
     border-radius: 25px;
-    height: 85%;
     backdrop-filter: brightness(0.7);
+}
+.login .LoginBox
+{
+    height: 627px;
+}
+.sign .LoginBox
+{
+    height: 690px;
 }
 .Title h1
 {
@@ -90,17 +103,25 @@ body
     width: 90%;
     margin: 25px auto 0 auto;
 }
-.confirmBox .LoginButt
+.confirmBox .LoginButt , .SigninButt
 {
     width: 100%;
     padding: 15px;
     border: none;
     outline: none;
-    background-color: #C91415;
     border-radius: 30px;
     font-size: 20px;
     cursor: pointer;
+}
+.confirmBox .LoginButt
+{
+    background-color: #C91415;
     color: white;
+}
+.confirmBox .SigninButt
+{
+    background-color: #B9B9B9;
+    color: black;
 }
 .separate
 {
@@ -123,6 +144,10 @@ body
     width: 40%;
     height: 1px;
     background-color: rgb(162, 162, 162);
+}
+.signsep
+{
+    margin-top: 30px;
 }
 .GoogleLogin
 {
@@ -169,65 +194,52 @@ body
 {
     color: rgb(166, 166, 166);
 }
-.LoginBoxFooter p span
+.LoginBoxFooter p a
 {
     color: red;
     font-weight: 600;
     cursor: pointer;
 }
-@media only screen and (max-width : 450px)
-{
-    
+ @media only screen and (max-width : 1200px)
+ {
+    .sign .LoginBox
+    {
+        height: 670px;
+    }
     .LoginBox
     {
-        width: 360px;
-        height: 63%;
-        top: 35%;
+        width: 45%;
+        height: 650px;
     }
-    .Title h1
-    {
-        font-size: 30px;
-    }
-    .GoogleLogin i
-    {
-    font-size: 20px;
-    margin-right: 8px;
-    }
-    .separate
-    {
-        margin-top: 20px;
-    }
-    .GoogleLogin
-    {
-        margin-top: 20px;
-    }
-    .LoginBoxFooter
-    {
-        text-align: center;
-        width: 70%;
-    }
-}
-@media only screen and (max-width : 400px)
-{
+ }
+ @media only screen and (max-width : 1000px)
+ {
     .LoginBox
     {
-        width: 345px;
-        height: 68%;
-        top: 37%;
-        border-radius: 15px;
+        width: 50%;
+        height: 650px;
     }
-}
-@media only screen and (max-width : 395px)
-{
+ }
+ @media only screen and (max-width : 850px)
+ {
+    .sign .LoginBox
+    {
+        height: 690px;
+    }
+ }
+ @media only screen and (max-width : 720px)
+ {
     .LoginBox
     {
-        width: 330px;
-        height: 87%;
-        top: 47%;
-        border-radius: 15px;
+        width: 60%;
+        height: 650px;
     }
-    .GoogleLogin p
+ }
+ @media only screen and (max-width : 590px)
+ {
+    .LoginBox
     {
-        font-size: 17px;
+        width: 75%;
+        height: 650px;
     }
-}
+ }
