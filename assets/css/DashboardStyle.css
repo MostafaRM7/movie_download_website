@@ -1,0 +1,149 @@
+nav
+{
+    top: 0;
+}
+.dashBg
+{
+    background: url('../img/userPanel/Dashboardbg.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(8px);
+}
+.dashContainer
+{
+    width: 80%;
+    z-index: 2;
+    margin: 90px auto 20px auto;
+    border-radius: 10px;
+    border: 2px solid rgb(119, 119, 119);
+}
+
+.sidebar
+{
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.155);
+    border-radius: 5px;
+}
+.sidebar > div
+{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    transition: 0.3ms;
+    position: relative;
+}
+.sidebar > div::before
+{
+    position: absolute;
+    content: ' ';
+    background-color: white;
+    display: block;
+    transition: 300ms;
+}
+.sidebar > div::before
+{
+    bottom: 0;
+    height: 3px;
+    width: 0;
+}
+
+.sidebar > div::after
+{
+     width: 3px;
+     height: 0;
+     right: 0;
+     top: 0;
+}
+.sidebar > div:nth-last-child(2):hover::before ,
+div:nth-last-child(3):hover::before
+{
+    width: 100%;
+}
+
+.sidebar > div:nth-last-child(1):hover::before
+{
+    background-color: rgb(255, 45, 45);
+    width: 100%;
+}
+.sidebar > div h4 
+{
+    text-shadow: 0px 0px 10px #000000;
+}
+
+.avatarPic
+{
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.avatarPic i 
+{
+    font-size: 70px;
+    background:-moz-radial-gradient(circle at 51% 61%, rgba(61, 56, 255, 1) 0%, rgba(106, 102, 255, 1) 98%);
+    background: -webkit-radial-gradient(circle at 51% 61%, rgba(61, 56, 255, 1) 0%, rgba(106, 102, 255, 1) 98%);
+    background: radial-gradient(circle at 51% 61%, rgba(61, 56, 255, 1) 0%, rgba(106, 102, 255, 1) 98%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+.AvatarName
+{
+    margin-top: -15px;
+}
+.img-fluid
+{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+.SavedItem
+{
+    overflow: hidden;
+}
+.SavedItem .SavedItemImage 
+{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.SavedItem .MovieName h4
+{
+    text-shadow: 0px 0px 10px #000000;
+}
+.hover i 
+{
+    font-size: px;
+}
+
+.form-group label 
+{
+    text-shadow: 0px 0px 10px #000000;
+}
+
+.form-control
+{
+    width: 92%;
+    background-color: #00000043;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.form-control:focus
+{
+    width: 95%;
+    border-radius: 20px;
+    background: none;
+    color: white;
+    background-color: #00000078;
+}
+.btn-warning
+{
+    width: 120px;
+}

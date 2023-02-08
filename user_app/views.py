@@ -88,7 +88,7 @@ class DashboardView(View):
     @staticmethod  # TODO: add user profile
     def get(request: HttpRequest):
         user = request.user
-        return JsonResponse({'user_email': user.email})
+        return render(request, 'dashboard.html', {'user': user})
 
 
 @method_decorator(login_required(), name='dispatch')
