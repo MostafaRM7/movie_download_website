@@ -6,17 +6,17 @@
     <title>
         {% block title %}{% endblock %}
     </title>
-    {% include '_shared/header_ref.html' %}
     {% block css %}{% endblock %}
+    {% include '_shared/header_ref.html' %}
 </head>
 <body>
-    {% render_partial 'home_app.views.header' %}
+{% render_partial 'home_app.views.header' %}
 
 {% block body %}
 
 {% endblock %}
-    {% render_partial 'home_app.views.footer' %}
-    {% include '_shared/footer_ref.html '%}
-    {% block js %}{% endblock %}
+{% render_partial 'home_app.views.footer' %}
+{% include '_shared/footer_ref.html ' %}
+{% block js %}{% endblock %}
 </body>
 </html>
