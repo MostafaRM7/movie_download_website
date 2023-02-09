@@ -127,3 +127,7 @@
     /*background: black;*/
     backdrop-filter: blur(5px);
 }
+.navbarLink {
+    text-decoration: none;
+    color: inherit;
+}

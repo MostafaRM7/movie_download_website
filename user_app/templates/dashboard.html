@@ -7,139 +7,97 @@
 {% block body %}
     <div class="dashBg"></div>
     <div class="dashContainer d-flex flex-md-row flex-column p-4 ">
-      <aside class="sidebar  col-md-3 col-sm-12 pb-3">
+        <aside class="sidebar  col-md-3 col-sm-12 pb-3">
             <div class="avatarPic w-100 mt-1">
-                    <i class="fa fa-user"></i>
+                <i class="fa fa-user"></i>
             </div>
-            <div  class="AvatarName  w-100 text-center text-white " onclick="callTest()">
+            <div class="AvatarName  w-100 text-center text-white " onclick="">
                 <h4 class="AvatarNameText">{% if user.first_name %}
                     {{ user.first_name|title }} {{ user.last_name }}
                 {% else %}
                     {{ user.username|title }}
                 {% endif %} </h4>
             </div>
-            <div class="AvatarSaved justify-content-sm-center justify-content-md-start  d-flex align-items-center text-white mt-5  icon-cursor-move" onclick="callTest()">
-              <a href="" class="text-decoration-none text-white d-flex">
-                <i  class="fa fa-bookmark fs-4 ms-4"></i>
-                <h4 class="ms-3">Saved</h4>
-              </a>
+            <div class="AvatarSaved justify-content-sm-center justify-content-md-start  d-flex align-items-center text-white mt-5  icon-cursor-move">
+                <a onclick="hide_element('profile'); show_element('saved')"
+                   class="text-decoration-none text-white d-flex">
+                    <i class="fa fa-bookmark fs-4 ms-4"></i>
+                    <h4 class="ms-3">Saved</h4>
+                </a>
 
             </div>
             <div class="AvatarProfile justify-content-sm-center justify-content-md-start d-flex align-items-center text-white mt-5 ">
-              <a href="" class="text-decoration-none text-white d-flex">
-                <i class="fa fa-user-circle fs-4 ms-4"> </i>
-                <h4 class="ms-3">Profile</h4>
-              </a>
+                <a onclick="hide_element('saved'); show_element('profile')"
+                   class="text-decoration-none text-white d-flex">
+                    <i class="fa fa-user-circle fs-4 ms-4"> </i>
+                    <h4 class="ms-3">Profile</h4>
+                </a>
 
             </div>
             <div class="AvatarLogout justify-content-sm-center justify-content-md-start d-flex align-items-center mt-5  text-danger">
-              <a href="{% url 'logout' %}" class="text-decoration-none text-danger d-flex">
-                <i class="fa fa-sign-out-alt fs-4 ms-4"> </i>
-                <h4 class="ms-3">Logout</h4>
-              </a>
+                <a href="{% url 'logout' %}" class="text-decoration-none text-danger d-flex">
+                    <i class="fa fa-sign-out-alt fs-4 ms-4"> </i>
+                    <h4 class="ms-3">Logout</h4>
+                </a>
             </div>
         </aside>
-        <main class="contentBar  col-md-9 col-sm-12 ms-4">
-
-            <!-- <h3 class="text-white mt-sm-4">Saved</h3>
-            <section class="regular slider h-50 mt-4">
-                <div class="SavedItem ms-3">
-                  <a href="/Info.html"></a>
-                  <div class="SavedItemImage">
-                    <img class="img-fluid" src="Src/Images/Landing/RMSImages/The-Visitor.jpg" alt="">
-                    <div class="hover">
-                      <i class='fas fa-play'></i>
-                    </div>
-                  </div>
-                  <div class="MovieName">
-                    <h4>The Visitor</h4>
-                </div>
-                </div>
-                <div class="SavedItem ms-3">
-                  <div class="SavedItemImage">
-                    <img class="img-fluid" src="Src/Images/Landing/RMSImages/Halloween Kills.jpg" alt="">
-                    <div class="hover">
-                      <i class='fas fa-play'></i>
-                    </div>
-                  </div>
-                  <div class="MovieName">
-                    <h4>Halloween Kills</h4>
-                  </div>
-                </div>
-                <div class="SavedItem ms-3">
-                  <a href="/Info.html"></a>
-                  <div class="SavedItemImage">
-                    <img class="img-fluid" src="Src/Images/Landing/RMSImages/Dear-Zoe.jpg" alt="">
-                    <div class="hover">
-                      <i class='fas fa-play'></i>
-                    </div>
-                  </div>
-                  <div class="MovieName">
-                    <h4>Dear-Zoe</h4>
-                </div>
-                </div>
-                <div class="SavedItem ms-3">
-                  <a href="/Info.html"></a>
-                  <div class="SavedItemImage">
-                    <img class="img-fluid" src="Src/Images/Landing/RMSImages/The-Visitor.jpg" alt="">
-                    <div class="hover">
-                      <i class='fas fa-play'></i>
-                    </div>
-                  </div>
-                  <div class="MovieName">
-                    <h4>The Visitor</h4>
-                </div>
-                </div>
-                <div class="SavedItem ms-3">
-                  <a href="/Info.html"></a>
-                  <div class="SavedItemImage">
-                    <img class="img-fluid" src="Src/Images/Landing/RMSImages/The-Visitor.jpg" alt="">
-                    <div class="hover">
-                      <i class='fas fa-play'></i>
-                    </div>
-                  </div>
-                  <div class="MovieName">
-                    <h4>The Visitor</h4>
-                </div>
-                </div>
-                <div class="SavedItem ms-3">
-                  <div class="SavedItemImage">
-                    <img class="img-fluid" src="Src/Images/Landing/RMSImages/A-Jazzmans-Blues.jpg" alt="">
-                    <div class="hover">
-                      <i class='fas fa-play'></i>
-                    </div>
-                  </div>
-                  <div class="MovieName">
-                    <h4>A-Jazzmans-Blues</h4>
-                  </div>
-                </div>
-
-
-              </section> -->
-            <h3 class="text-white mt-sm-5">Profile</h3>
-            <div class="w-100 h-90">
-                <form class="profileForm d-grid ">
-                    <div class="form-group">
-                        <label class="text-white mt-3 shadow-lg" for="EmailInput"
-                               aria-describedby="emailHelp">Email</label>
-                        <input type="email" id="EmailInput" class="form-control" value="{{ user.email }}">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-white mt-3 shadow-lg" for="UserNameInput">Username</label>
-                        <input type="text" id="UserNameInput" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-white mt-3 shadow-lg" for="PhNumInput">Phone Number</label>
-                        <input type="text" id="PhNumInput" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-white mt-3" for="PassInput">Password</label>
-                        <input type="password" id="PassInput" class="form-control">
-                    </div>
-
-                </form>
-                <div class="ProfileConfirm">
-                    <button type="submit" class="btn btn-warning rounded-5 mt-4 shadow-sm p-2">Confirm</button>
+        <main id="contentBar" class="contentBar  col-md-9 col-sm-12 ms-4">
+            <div id="saved">
+                <h3 class="text-white mt-sm-4">Saved movies</h3>
+                <section class="regular slider h-50 mt-4">
+                    {% for serie in saved_series %}
+                        <div class="SavedItem ms-3">
+                            <div class="SavedItemImage">
+                                <img class="img-fluid" src="{{ serie.banner.url }}" alt="">
+                                <div class="hover">
+                                    <a href="{{ serie.get_absolute_url }}"><i class='fas fa-play'></i></a>
+                                </div>
+                            </div>
+                            <div class="MovieName">
+                                <h4>{{ serie.name }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for film in saved_films %}
+                        <div class="SavedItem ms-3">
+                            <div class="SavedItemImage">
+                                <img class="img-fluid" src="{{ film.banner.url }}" alt="">
+                                <div class="hover">
+                                    <a href="{{ film.get_absolute_url }}"><i class='fas fa-play'></i></a>
+                                </div>
+                            </div>
+                            <div class="MovieName">
+                                <h4>{{ film.name }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </section>
+            </div>
+            <div id="profile" style="display: none">
+                <h3 class="text-white mt-sm-5">Profile</h3>
+                <div class="w-100 h-90">
+                    <form class="profileForm d-grid " method="post" action="{% url 'dashboard-page' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="text-white mt-3 shadow-lg" for="UserNameInput">First name</label>
+                            <input type="text" id="UserNameInput" class="form-control" name="first_name"
+                                   value="{{ user.first_name }}">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white mt-3 shadow-lg" for="PhNumInput">Last name</label>
+                            <input type="text" id="PhNumInput" class="form-control" name="last_name"
+                                   value="{{ user.last_name }}">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white mt-3 shadow-lg" for="EmailInput"
+                                   aria-describedby="emailHelp">Email</label>
+                            <input type="email" id="EmailInput" class="form-control" value="{{ user.email }}"
+                                   name="email">
+                        </div>
+                        <div class="ProfileConfirm">
+                            <button type="submit" class="btn btn-warning rounded-5 mt-4 shadow-sm p-2">Confirm</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>

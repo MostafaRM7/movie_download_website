@@ -81,3 +81,12 @@ function add_to_favorite(slug) {
         }
     })
 }
+
+function hide_element(id) {
+    let element = document.getElementById(id)
+    element.style.display = 'none'
+}
+function show_element(id) {
+    let element = document.getElementById(id)
+    element.style.display = 'block'
+}

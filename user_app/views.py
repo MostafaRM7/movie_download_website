@@ -88,7 +88,18 @@ class DashboardView(View):
     @staticmethod  # TODO: add user profile
     def get(request: HttpRequest):
         user = request.user
-        return render(request, 'dashboard.html', {'user': user})
+        saved_films = user.saved_films.all()
+        saved_series = user.saved_series.all()
+        return render(request, 'dashboard.html',
+                      {'user': user, 'saved_films': saved_films, 'saved_series': saved_series})
+    @staticmethod
+    def post(request: HttpRequest):
+        user = request.user
+        user.first_name = request.POST.get('first_name')
+        user.email = request.POST.get('email')
+        user.last_name = request.POST.get('last_name')
+        user.save()
+        return redirect(reverse('dashboard-page'))
 
 
 @method_decorator(login_required(), name='dispatch')
