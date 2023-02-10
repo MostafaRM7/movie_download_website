@@ -65,19 +65,25 @@
                         </div>
                     </article>
                 {% endfor %}
-
-                <ul class="pagination modal-5">
+                
+                <ul class="pagination">
                     {% if page_obj.has_previous %}
-                        <li><a href="?page={{ page_obj.previous_page_number }}" class="prev fa fa-arrow-left"> </a></li>
+                        <a href="?page={{ page_obj.previous_page_number }}" class="prev fa fa-arrow-left">
+                           <span> Previous </span> 
+                            <i class="fas fa-angel-left"></i>
+                             </a>
                     {% endif %}
                     {% for page_number in paginator.page_range %}
-                        <li><a href="?page={{ page_number }}"
-                               class="{% if page_obj.number == page_number %} active {% endif %}">{{ page_number }}</a>
-                        </li>
+                        <a href="?page={{ page_number }}"
+                               class="{% if page_obj.number == page_number %} active {% endif %}"><span>{{ page_number }}</span> </a>
+                        
                     {% endfor %}
 
                     {% if page_obj.has_next %}
-                        <li><a href="?page={{ page_obj.next_page_number }}" class="next fa fa-arrow-right"></a></li>
+                        <a href="?page={{ page_obj.next_page_number }}" class="next fa fa-arrow-right">
+                            <i class="fas fa-angel-right"></i>
+                           <span>Next</span> 
+                        </a>
                     {% endif %}
 
                 </ul>

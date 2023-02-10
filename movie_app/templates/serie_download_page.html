@@ -31,8 +31,8 @@
                 </div>
                 <div class="rightPost">
                     <div class="RateSaveBox">
-
                         <div class="RateBox">
+                            <h3>Rate</h3>
                             <div class="RateStars">
                                 <input type="radio" id="star5" name="rate" value="5">
                                 <label for="star5" title="text">5 stars</label>
@@ -115,7 +115,8 @@
         <div class="MovieSlider">
             <div class="SliderTitle">Same genre</div>
             <main>
-                {% for related_serie in related_series %}
+                <section class="regular slider">
+                    {% for related_serie in related_series %}
                     <li class="item">
                         <div class="itemImage">
                             {% thumbnail related_serie.banner "450x555" crop="center" as im %}
@@ -130,7 +131,8 @@
                         </div>
                     </li>
                 {% endfor %}
-
+                </section>
+                
             </main>
         </div>
 
