@@ -58,18 +58,15 @@ header
     right: 0;
     text-align: center;
 }
-.RateSaveBox .rateBox h2
+.RateSaveBox .RateBox h3
 {
    color: #d7d7d7;
+   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.621);
 }
 .RateBox {
     float: left;
     height: 46px;
     padding: 0 10px;
-}
-.RateBox  h3
-{
-    color: #d7d7d7;
 }
  .RateBox  .RateStars:not(:checked) > input {
     position:absolute;
@@ -82,7 +79,8 @@ header
     white-space:nowrap;
     cursor:pointer;
     font-size:30px;
-    color:#ccc;
+    color:rgb(217, 217, 217);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.216);
 }
 .RateBox .RateStars:not(:checked) > label:before {
     content: '★ ';
@@ -102,6 +100,10 @@ header
     color: #c59b08;
 }
 
+.saveBox
+{
+    margin-top: 68px;
+}
 .saveBox i
 {
     margin-top: 25px;
@@ -365,6 +367,10 @@ header
     font-size: 13px;
     margin: 20px 40px;
    }
+   .RateBox .RateStars:not(:checked) > label
+   {
+    font-size: 25px;
+   }
 }
 @media only screen and (max-width : 860px)
 {
@@ -468,7 +474,7 @@ header
     }
     .DWContainer .DWTitle
     {
-        font-size: 15px;
+        font-size: 17px;
         width: 68%;
     }
     .DWContainer .DWTitle::hover 
@@ -488,7 +494,7 @@ header
         font-size: 16px;
     }
 }
-@media only screen and (max-width : 470px)
+@media only screen and (max-width : 480px)
 {
     .container
     {
@@ -578,6 +584,14 @@ header
     }
     .DWContainer .DWTitle
     {
-        width: 85%;
+        width: 75%;
+    }
+    .DWContainer .DWTitle:hover
+    {
+        width: 80%;
+    }
+    .DWContainer p 
+    {
+        font-size: 15px;
     }
 }

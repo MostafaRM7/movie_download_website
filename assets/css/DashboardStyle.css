@@ -112,10 +112,7 @@ div:nth-last-child(3):hover::before
     overflow: hidden;
     border-radius: 10px;
 }
-.SavedItem .MovieName h4
-{
-    text-shadow: 0px 0px 10px #000000;
-}
+
 .hover i 
 {
     font-size: px;

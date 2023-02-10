@@ -28,7 +28,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: rgb(0, 0, 0);
 }
-
+.hide {
+    display: none;
+}
 .Slidercontainer {
     position: relative;
     width: 100%;
@@ -257,7 +259,7 @@ nav .navbarList .navbarItem {
 .wgh-slider__viewport {
     position: relative;
     height: 400px;
-    width: 679px;
+    width: 100%;
     margin: 0 auto 0 auto;
 }
 
@@ -287,7 +289,7 @@ nav .navbarList .navbarItem {
 .SliderHeader .HSliderTitle {
     color: #fff;
     font-size: 23px;
-
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.599);
 }
 
 .SliderHeader .HSliderSeeMore {
@@ -671,6 +673,10 @@ main > h1 {
   border-radius: 10px;
   cursor: pointer;
 }
+.SavedItem .MovieName h4 , .trend-item h3
+{
+    text-shadow: 0px 0px 10px #000000;
+}
 .itemImage 
 {
   height: 400px;
@@ -948,9 +954,7 @@ main > h1 {
 }
 
 .MovieImage {
-    margin-left: 50px;
-    margin-top: 25px;
-    height: 400px;
+    margin: 20px 0 0 20px;
 }
 
 .MovieTitle h2 {
@@ -983,17 +987,18 @@ main > h1 {
     font-size: 14px;
     color: rgb(194, 194, 194);
     margin: 17px 0 17px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.288);
 }
 
 .Des {
-    width: 90%;
+    max-width: 90%;
     color: rgb(211, 211, 211);
     /* margin: 0 auto 0 auto; */
-    border-radius: 20px;
-    line-height: 40px;
+    border-radius: 10px;
+    line-height: 30px;
 
     background-color: rgb(19, 19, 19);
-    padding: 15px;
+    padding: 10px;
 }
 
 .Des p {
@@ -1076,79 +1081,46 @@ main > h1 {
     color: #000;
 }
 
-.PaginationCon {
-    width: 60%;
-    height: 140px;
-    padding: 10px;
-    padding-left: 15px;
-    margin: 20px 100px;
-    border-radius: 10px;
+.pagination {
     display: flex;
-    align-items: center;
-    background-color: #0B0B0B;
-    color: #fff;
-}
-
-.PaginationCon span {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    color: #000;
-    text-align: center;
-    line-height: 70px;
-    cursor: pointer;
-    background-color: yellow;
-}
-
-.Pagination {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-.Pagination li {
-    margin: 0 15px 0 15px;
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    line-height: 70px;
-    background-color: rgb(156, 156, 156);
-    border-radius: 50%;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-.Pagination li a {
+    width: 90%;
+    margin: 40px 0 0 54px;
+    height: auto;
+    flex-wrap: wrap;
+   
+  }
+  .pagination a
+  {
     text-decoration: none;
-    color: #000;
-    font-size: 20px;
-}
-
-.Pagination li:hover {
-    background-color: #000;
-}
-
-.Pagination li:hover a {
+    margin-left: 30px;
+    text-align: center;
+    padding: 13px;
     color: white;
-}
-
-.Pagination li.ActivePage {
-    background-color: #000;
-}
-
-.Pagination li.ActivePage a {
+    background-color: #202020;;
+    border-radius: 10px;
+  }
+  .pagination a span 
+  {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+  }
+  .pagination .prev span 
+   {
+    margin-left: 5px;
+   }
+  .pagination .next span
+  {
+    margin-right: 5px;
+  }
+  .pagination a.active {
+    background-color: #343434;
     color: white;
-}
-
-.goBack, .goForward {
-    background-color: white;
-    font-size: 25px;
-    margin-left: 10px;
-}
-
-.goBack {
-    display: none;
-}
+  }
+  
+  .pagination a:hover:not(.active) {
+    background-color: rgb(156, 156, 156);
+    color: black;
+  }
 
 footer {
     width: 100%;
@@ -1182,6 +1154,7 @@ footer .UpperPart .WebLogo {
     width: 300px;
     margin: 50px 70px;
     pointer-events: none;
+    max-width: 60%;
 }
 
 .LowerPart {
@@ -1410,6 +1383,14 @@ footer .UpperPart .WebLogo {
   }
 }
 @media only  screen and (min-width : 632px) and (max-width : 753px) {
+  .wgh-slider__viewbox
+  {
+    perspective: 125vw;
+  }
+  .wgh-slider-item-figure {
+    width: 243px;
+    height: 375px;
+   }
   .Continue {
     top: 238px;
    }
@@ -1425,35 +1406,37 @@ footer .UpperPart .WebLogo {
    .genre, .IMDBrate, .Dir, .Cast, .year, .country, .Lan {
     margin: 8px 0 17px;
   }
+ 
 }
-@media only screen and (max-width : 630px)
+@media only screen and (max-width : 632px)
 {  
-  .wgh-slider__viewbox
-{
-  perspective: 300vw;
-}
-.wgh-slider__container
-{
-  width: 278px;
-  left: -76px;
-}
+    
+   .wgh-slider__viewbox 
+  {
+    perspective: 277vw;
+    margin: 0 auto 0 auto;
+    width: 5%;
+  }
+  .wgh-slider__container
+  {
+   width: 278px;
+   left: -76px;
+  }
   .Trend-Items
   {
     grid-template-columns: auto auto;
   }
-  .wgh-slider-item-figure
-  {
+  .wgh-slider-item-figure {
     width: 206px;
-    height: 304px;
-  }
+    height: 319px;
+}
   .Section2
   {
    height: 606px;
   }
-  .trend-item-image .Trend-Image
+   .trend-item .trend-item-image img
   {
-       width: 226px;
-    height: 330px;
+    width: 226px;
   }
   .MovieSlider .slick-slide
   {
@@ -1476,12 +1459,7 @@ footer .UpperPart .WebLogo {
     font-size: 12px;
     margin-top: 10px;
   }
-  .movieBox  .Continue
-  {
-    width: unset;
-    top: 230px;
-    right: 30px;
-  }
+  
   .movieBox .Continue .AdameMatlab
   {
     width: 155px;
@@ -1494,7 +1472,7 @@ footer .UpperPart .WebLogo {
   }
   .movieBoxContainer .TopPart .MovieInfo .Des p 
   {
-    font-size: 12px;
+    font-size: 14px;
   }
   .movieBoxContainer .MovieInfo
   {
@@ -1506,13 +1484,133 @@ footer .UpperPart .WebLogo {
   {
     font-size: 22px;
   }
+  .pagination
+  {
+    margin: 40px 0 0 14px;
+  }
+  .movieBox  .Continue
+  {
+    width: unset;
+    top: 230px;
+    right: 30px;
+  }
+  .movieBox
+  {
+    height: auto;
+    position: relative;
+  }
+  .Des
+  {
+    display: none;
+  }
 }
-@media only screen and (max-width : 515px)
+@media only screen and (max-width : 520px)
 {
+  .MovieSlider .SliderTitle
+  {
+    font-size: 22px;
+  }
+  .Trends-Title
+   {
+    font-size: 22px;
+   }
+  .Catitem
+   {
+    padding: 0 20px 0 20px;
+    height: 38px;
+    line-height: 38px;
+   }
   .Trend-Items
   {
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
   }
+  .trend-item .trend-item-image img
+  {
+    width: 212px;
+  }
+  .slick-slide
+  {
+    margin-left: 20px;
+  }
+  .MovieSlider .slick-slide
+  {
+    width: 197px;
+  }
+  .MovieSlider .slick-slide .itemImage
+  {
+    height: 261px;
+  }
+}
+@media only screen and (max-width : 505px)
+{
+    .trend-item .trend-item-image img
+  {
+    width: 190px;
+  }
+  .searchBox input
+  {
+    width: 160px;
+  }
+  .searchBox input:hover, input:focus
+  {
+    width: 175px;
+  }
+  .ui-menu
+  {
+    width: 175px;
+  }
+}
+@media only screen and (max-width : 480px)
+{
+   .wgh-slider-item-figure {
+    width: 206px;
+    height: 320px;
+   }
+    footer .UpperPart .ContactINFO div
+    {
+        font-size: 20px;
+    }
+    
+    .SoMeIcons
+    {
+        margin-left: 35px;
+    }
+    .GenreFilter .Genre, .Year
+    {
+      font-size: 15px;
+    }
+    .searchBox input
+    {
+      width: 151px;
+    }
+    .searchBox input:hover, input:focus
+    {
+      width: 165px;
+    }
+}
+@media only screen and (max-width : 450px)
+{
+    .trend-item .trend-item-image img
+    {
+      width: 170px;
+    }
+    
+}
+@media only screen and (max-width : 425px)
+{
+    footer .UpperPart .ContactINFO div
+    {
+        font-size: 18px;
+    }
+    .SoMeIcons
+    {
+        margin-left: 20px;
+        font-size: 25px;
+    }
+    .GenreFilter .Genre, .Year
+    {
+      font-size: 14px;
+    }
 }
 @media only screen and (max-width : 416px)
 {
@@ -1520,17 +1618,8 @@ footer .UpperPart .WebLogo {
   {
     font-size: 19px;
   }
-  .GenreFilter .Genre, .Year
-  {
-    font-size: 16px;
-  }
-  .searchBox input
-  {
-    width: 151px;
-  }
-  .searchBox input:hover {
-    width: 170px;
-}
+  
+  
   .SliderHeader .HSliderTitle
   {
     font-size: 20px;
@@ -1567,10 +1656,7 @@ footer .UpperPart .WebLogo {
     line-height: 46px;
     margin: 0 10px 0 10px;
   }
-  footer .UpperPart .WebLogo
-  {
-    width: 250px;
-  }
+ 
   .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child) i 
   {
     font-size: 16px;
@@ -1585,10 +1671,35 @@ footer .UpperPart .WebLogo {
     height: 44px;
     font-size: 17px;
   }
+  
+  .designer p
+  {
+    font-size: 22px;
+  }
 }
-
+@media only screen and (max-width : 390px)
+{
+    .ContactINFO > div
+    {
+        margin: 30px 11px;
+    }
+   
+}
 @media only screen and (max-width : 376px)
 {
+  .wgh-slider-item-figure {
+    width: 187px;
+    height: 296px;
+}
+ .wgh-slider__viewbox {
+  perspective: 277vw;
+  margin: 0 auto 0 209px;
+  width: 0%;
+ }
+  .trend-item .trend-item-image img
+  {
+    width: 150px;
+  }
   .LoginButt
   {
     width: 81px;
@@ -1599,20 +1710,27 @@ footer .UpperPart .WebLogo {
   .searchBox input:hover {
     width: 150px;
    }
+   .ui-menu
+   {
+    width: 150px;
+   }
   .trend-item-image .Trend-Image {
     width: 232px;
   }
   .wgh-slider__container {
     left: -127px;
   }
-  
+  .trend-item-image img {
+    width : 235px;
+  }
   .movieBoxContainer .movieBox .MovieTitle h2 {
     font-size: 17px;
   }
   .movieBox .Continue .AdameMatlab {
-    width: 142px;
-    height: 40px;
-    font-size: 15px;
+    width: 130px;
+    height: 38px;
+    font-size: 13px;
+    border-radius: 10px;
 }
   .movieBox .Continue {
     right: 5px;
@@ -1635,10 +1753,7 @@ footer .UpperPart .WebLogo {
   {
     font-size: 23px;
   }
-  footer .UpperPart .WebLogo
-  {
-    width: 235px;
-  }
+ 
   footer .UpperPart .ContactINFO div
   {
    font-size: 17px;
@@ -1647,16 +1762,14 @@ footer .UpperPart .WebLogo {
 @media only screen and (max-width : 361px)
 {
   .movieBox .Continue .AdameMatlab {
-    width: 134px;
-    height: 38px;
-    font-size: 13px;
+    width: 132px;
+    height: 36px;
+    font-size: 12px;
 }
-  footer .UpperPart .WebLogo
-  {
-    width: 220px;
-  }
+  
   footer .UpperPart .ContactINFO div
   {
    font-size: 16px;
   }
 }
+  
