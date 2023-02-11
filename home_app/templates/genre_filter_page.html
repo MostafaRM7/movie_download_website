@@ -48,7 +48,11 @@
 
                 <ul class="pagination modal-5">
                     {% if page.has_previous %}
-                        <li><a href="?page={{ page.previous_page_number }}" class="prev fa fa-arrow-left"> </a></li>
+                        <li>
+                            <a href="?page={{ page.previous_page_number }}" class="prev fa fa-arrow-left"> 
+                                <span> Previous </span> 
+                            </a>
+                        </li>
                     {% endif %}
                     {% for page_number in paginator.page_range %}
                         <li><a href="?page={{ page_number }}"
@@ -57,7 +61,10 @@
                     {% endfor %}
 
                     {% if page.has_next %}
-                        <li><a href="?page={{ page.next_page_number }}" class="next fa fa-arrow-right"></a></li>
+                        <li>
+                            <a href="?page={{ page.next_page_number }}" class="next fa fa-arrow-right">
+                                <span> Next </span> 
+                        </a></li>
                     {% endif %}
                 </ul>
 
