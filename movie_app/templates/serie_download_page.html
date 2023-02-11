@@ -48,15 +48,15 @@
                         </div>
                         {% if user.is_authenticated %}
                             <div class="saveBox">
-                            <button style="background-color: transparent; border-color: transparent; cursor: pointer">
-                                <i id="favorite" class="{% if is_favorite %}
+                                <button style="background-color: transparent; border-color: transparent; cursor: pointer">
+                                    <i id="favorite" class="{% if is_favorite %}
                                     bi-bookmark-plus-fill
                                 {% else %}
                                     bi-bookmark-plus
                                 {% endif %} "
-                                   onclick="{% if is_favorite %}remove_from_favorite('{{ serie.slug }}'){% else %}add_to_favorite('{{ serie.slug }}'){% endif %}"></i>
-                            </button>
-                        </div>
+                                       onclick="{% if is_favorite %}remove_from_favorite('{{ serie.slug }}'){% else %}add_to_favorite('{{ serie.slug }}'){% endif %}"></i>
+                                </button>
+                            </div>
                         {% endif %}
 
                     </div>
@@ -112,27 +112,34 @@
                 </span>
             </div>
         </div>
+            <div class="TrailerBox">
+                <img src="{{ serie.background.url }}" alt="" class="Poster">
+                <video class="TrlVideo" controls poster="{{ serie.background.url }}">
+                    <source src="">
+                    Your Browser doesn't support this tag
+                </video>
+            </div>
         <div class="MovieSlider">
             <div class="SliderTitle">Same genre</div>
             <main>
                 <section class="regular slider">
                     {% for related_serie in related_series %}
-                    <li class="item">
-                        <div class="itemImage">
-                            {% thumbnail related_serie.banner "450x555" crop="center" as im %}
-                                <img src="{{ im.url }}" alt="">
-                            {% endthumbnail %}
-                            <div class="hover">
-                                <i class="fas fa-play" aria-hidden="true"></i>
+                        <li class="item">
+                            <div class="itemImage">
+                                {% thumbnail related_serie.banner "450x555" crop="center" as im %}
+                                    <img src="{{ im.url }}" alt="">
+                                {% endthumbnail %}
+                                <div class="hover">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="MovieName">
-                            <h4>{{ related_serie.name }}</h4>
-                        </div>
-                    </li>
-                {% endfor %}
+                            <div class="MovieName">
+                                <h4>{{ related_serie.name }}</h4>
+                            </div>
+                        </li>
+                    {% endfor %}
                 </section>
-                
+
             </main>
         </div>
 

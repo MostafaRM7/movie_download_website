@@ -1,18 +1,18 @@
 <footer>
     <div class="UpperPart">
         <div class="WebBrand">
-            <img class="WebLogo" src="/assets/img/WebLogo/Untitled-1.svg" alt="">
-            <h2 class="WebName">Diamond Movie</h2>
+            <img class="WebLogo" src="{{ settings.site_logo.url }}" alt="">
+            <h2 class="WebName">{{ settings.site_name|title }}</h2>
         </div>
 
 
         <div class="ContactINFO">
             <div class="gmail1"><i class="fas fa-envelope" aria-hidden="true"></i>
-                <p>amirmohammadsolgi1381@gmail.com</p></div>
+                <p>{{ settings.email }}</p></div>
             <div class="gmail2"><i class="fas fa-envelope" aria-hidden="true"></i>
-                <p>mostafakooti2018@gmail.com</p></div>
+                <p>amirmohammadsolgi1381@gmail.com</p></div>
             <div class="TelID"><i class="fas fa-paper-plane" aria-hidden="true"></i>
-                <p>ams1381</p></div>
+                <p>{{ settings.telegram }}</p></div>
         </div>
     </div>
     <div class="LowerPart">

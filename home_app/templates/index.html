@@ -125,11 +125,10 @@
     <section class="Section2">
 
         <div class="MovieSlider">
-            <div class="SliderTitle">Recent 2022 Movies</div>
+            <div class="SliderTitle">Recent Series</div>
             <main>
                 <section class="regular slider">
-
-                    {% for recent_serie in recent_2022_series %}
+                    {% for recent_serie in recent_series %}
                         <div class="item">
                             <div class="itemImage">
                                 {% thumbnail recent_serie.banner "450x555" crop="center" as im %}
@@ -146,58 +145,6 @@
                             </div>
                         </div>
                     {% endfor %}
-                    {% for recent_film in recent_2022_films %}
-                        <div class="item">
-                            <div class="itemImage">
-                                {% thumbnail recent_film.banner "450x555" crop="center" as im %}
-                                    <img src="{{ im.url }}" alt="">
-                                {% endthumbnail %}
-                                <div class="hover">
-                                    <a href="{{ recent_film.get_absolute_url }}"> <i class="fas fa-play"
-                                                                                     aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="MovieName">
-                                <h4>{{ recent_film.name }}</h4>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% for recent_film in recent_2022_films %}
-                        <div class="item">
-                            <div class="itemImage">
-                                {% thumbnail recent_film.banner "450x555" crop="center" as im %}
-                                    <img src="{{ im.url }}" alt="">
-                                {% endthumbnail %}
-                                <div class="hover">
-                                    <a href="{{ recent_film.get_absolute_url }}"> <i class="fas fa-play"
-                                                                                     aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="MovieName">
-                                <h4>{{ recent_film.name }}</h4>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% for recent_film in recent_2022_films %}
-                        <div class="item">
-                            <div class="itemImage">
-                                {% thumbnail recent_film.banner "450x555" crop="center" as im %}
-                                    <img src="{{ im.url }}" alt="">
-                                {% endthumbnail %}
-                                <div class="hover">
-                                    <a href="{{ recent_film.get_absolute_url }}"> <i class="fas fa-play"
-                                                                                     aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="MovieName">
-                                <h4>{{ recent_film.name }}</h4>
-                            </div>
-                        </div>
-                    {% endfor %}
-
                 </section>
             </main>
 
@@ -208,7 +155,7 @@
         <div class="Section3BgEffect"></div>
         <!-- Recently updated series -->
         <div class="Trends">
-            <div class="Trends-Title">Recently Updated</div>
+            <div class="Trends-Title">Recent films</div>
             <ul class="Catitems regular slider">
                 {% for genre in all_genres %}
                     <li class="Catitem">
@@ -218,7 +165,7 @@
                 {% endfor %}
             </ul>
             <div class="Trend-Items">
-                {% for serie in Recently_updated.series.all %}
+                {% for serie in recent_films %}
                     <div class="trend-item">
                         <div class="trend-item-image">
                             {% thumbnail serie.banner "270x405" crop="center" as im %}
@@ -238,7 +185,7 @@
     <section class="Section4">
         <div class="movieBoxContainer">
             <main>
-                {% for film in latest_films %}
+                {% for film in latest_added_films %}
                     <article class="movieBox">
                         <div class="TopPart">
                             <div class="MovieImage">
@@ -275,7 +222,7 @@
                         </div>
                     </article>
                 {% endfor %}
-                {% for serie in latest_series %}
+                {% for serie in latest_added_series %}
                     <article class="movieBox">
                         <div class="TopPart">
                             <div class="MovieImage">

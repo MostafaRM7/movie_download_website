@@ -65,6 +65,7 @@ class Serie(Model):
     description = models.TextField(null=True)
     country = models.ForeignKey(to=Country, null=True, blank=True, on_delete=models.CASCADE)
     lang = models.ForeignKey(to=Language, null=True, blank=True, on_delete=models.CASCADE)
+    trailer = models.FileField(upload_to='uploads/trailers', null=True, blank=True)
     slug = models.SlugField(db_index=True, blank=True)
 
     def get_absolute_url(self):
@@ -114,6 +115,7 @@ class Film(Model):
     description = models.TextField(null=True)
     country = models.ForeignKey(to=Country, null=True, blank=True, on_delete=models.CASCADE)
     lang = models.ForeignKey(to=Language, null=True, blank=True, on_delete=models.CASCADE)
+    trailer = models.FileField(upload_to='uploads/trailers', blank=True, null=True)
     slug = models.SlugField(db_index=True, blank=True)
 
     def get_absolute_url(self):
@@ -164,9 +166,3 @@ class FilmVisit(Model):
             name = f'{self.film} - {self.ip}'
 
         return name
-
-
-
-
-
-

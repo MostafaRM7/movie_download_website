@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views import View
-from home_app.models import Slider, RecentlyUpdated
+from home_app.models import Slider, HomePageSlider, SiteSetting
 from movie_app.models import Film, Serie, Genre, Date
 
 
@@ -14,11 +14,10 @@ class HomeView(View):
     def get(request):
         context = {
             'slider': Slider.objects.filter(is_active=True).first(),
-            'latest_films': Film.objects.filter(is_active=True)[:5:-1],
-            'latest_series': Serie.objects.filter(is_active=True)[:5:-1],
-            'recent_2022_series': Serie.objects.filter(end_date__date__year=2022, is_active=True)[:2:-1],
-            'recent_2022_films': Film.objects.filter(release_date__date__year=2022, is_active=True)[:2:-1],
-            'Recently_updated': RecentlyUpdated.objects.filter(is_active=True).first(),
+            'latest_added_films': Film.objects.filter(is_active=True)[:5:-1],  # End of page
+            'latest_added_series': Serie.objects.filter(is_active=True)[:5:-1],  # End of page
+            'recent_series': HomePageSlider.objects.filter(is_active=True).first().recent_series_slider_2.all()[:2:-1],
+            'recent_films': HomePageSlider.objects.filter(is_active=True).first().recent_films_slider_1.all()[:2:-1],
             'all_genres': Genre.objects.all(),
         }
         return render(request, 'index.html', context)
@@ -77,7 +76,7 @@ def header(request: HttpResponse):
 
 
 def footer(request: HttpResponse):
-    return render(request, '_shared/footer.html', {})
+    return render(request, '_shared/footer.html', {'settings': SiteSetting.objects.filter(is_active=True).first()})
 
 
 def genres(request):

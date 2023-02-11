@@ -33,28 +33,49 @@ class Slider(Model):
         return string
 
 
-class RecentlyUpdated(Model):
-    series = models.ManyToManyField(Serie, related_name='lately_updated')
+class HomePageSlider(Model):
+    recent_films_slider_1 = models.ManyToManyField(Film, related_name='recent_films')
+    recent_series_slider_2 = models.ManyToManyField(Serie, related_name='recent_series')
     is_active = models.BooleanField()
 
     def __str__(self):
-        all_series = ''
-        for serie in self.series.all():
-            all_series += serie.name + ' - '
-        return all_series
+        result = ''
+        for film in self.recent_films_slider_1.all():
+            result += film.name + ' - '
+        for serie in self.recent_series_slider_2.all():
+            result += serie.name + ' - '
+        return result
 
     def save(self, *args, **kwargs):
         if self.is_active:
             try:
-                temp = RecentlyUpdated.objects.get(is_active=True)
+                temp = HomePageSlider.objects.get(is_active=True)
                 if self != temp:
                     temp.is_active = False
                     temp.save()
-            except RecentlyUpdated.DoesNotExist:
+            except HomePageSlider.DoesNotExist:
                 pass
-        super(RecentlyUpdated, self).save(*args, **kwargs)
+        super(HomePageSlider, self).save(*args, **kwargs)
 
 
-class SiteSettings(Model):
-    telegram_id = models.CharField(max_length=75)
+class SiteSetting(Model):
+    site_name = models.CharField(max_length=75)
+    site_logo = models.FileField(upload_to='uploads/site_logo')
+    favicon = models.FileField(upload_to='uploads/favicon')
+    telegram = models.URLField()
+    email = models.EmailField()
+    is_active = models.BooleanField()
 
+    def save(self, *args, **kwargs):
+        if self.is_active:
+            try:
+                temp = SiteSetting.objects.get(is_active=True)
+                if self != temp:
+                    temp.is_active = False
+                    temp.save()
+            except SiteSetting.DoesNotExist:
+                pass
+        super(SiteSetting, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.site_name} - {self.telegram} - {self.email}'

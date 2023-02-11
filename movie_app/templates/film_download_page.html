@@ -48,15 +48,15 @@
                         </div>
                         {% if user.is_authenticated %}
                             <div class="saveBox">
-                            <button style="background-color: transparent; border-color: transparent; cursor: pointer">
-                                <i id="favorite" class="{% if is_favorite %}
+                                <button style="background-color: transparent; border-color: transparent; cursor: pointer">
+                                    <i id="favorite" class="{% if is_favorite %}
                                     bi-bookmark-plus-fill
                                 {% else %}
                                     bi-bookmark-plus
                                 {% endif %} "
-                                   onclick="{% if is_favorite %}remove_from_favorite('{{ film.slug }}'){% else %}add_to_favorite('{{ film.slug }}'){% endif %}"></i>
-                            </button>
-                        </div>
+                                       onclick="{% if is_favorite %}remove_from_favorite('{{ film.slug }}'){% else %}add_to_favorite('{{ film.slug }}'){% endif %}"></i>
+                                </button>
+                            </div>
                         {% endif %}
 
 
@@ -107,6 +107,13 @@
                     <i class="far fa-clock"></i> Time : {{ film.length }} "
                 </span>
             </div>
+        </div>
+        <div class="TrailerBox">
+            <img src="{{ film.background.url }}" alt="" class="Poster">
+            <video class="TrlVideo" controls poster="{{ film.background.url }}">
+                <source src="">
+                Your Browser doesn't support this tag
+            </video>
         </div>
         <div class="MovieSlider ">
             <div class="SliderTitle">Same genre</div>

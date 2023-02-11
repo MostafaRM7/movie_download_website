@@ -6,4 +6,5 @@ from . import models
 
 
 admin.site.register(models.Slider)
-admin.site.register(models.RecentlyUpdated)
+admin.site.register(models.HomePageSlider)
+admin.site.register(models.SiteSetting)
