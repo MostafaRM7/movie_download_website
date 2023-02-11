@@ -80,6 +80,13 @@
                 </div>
 
             </div>
+            <div class="TrailerBox">
+                <img src="{{ film.background.url }}" alt="" class="Poster">
+                <video class="TrlVideo" controls poster="{{ film.background.url }}">
+                    <source src="">
+                    Your Browser doesn't support this tag
+                </video>
+            </div>
             <div class="DownloadBox">
                 <div class="DWContainer">
                     <div class="DWTitle">
@@ -108,13 +115,7 @@
                 </span>
             </div>
         </div>
-        <div class="TrailerBox">
-            <img src="{{ film.background.url }}" alt="" class="Poster">
-            <video class="TrlVideo" controls poster="{{ film.background.url }}">
-                <source src="">
-                Your Browser doesn't support this tag
-            </video>
-        </div>
+       
         <div class="MovieSlider ">
             <div class="SliderTitle">Same genre</div>
             <main class="regular slider">

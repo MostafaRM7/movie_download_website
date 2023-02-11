@@ -79,6 +79,13 @@
                 </div>
 
             </div>
+            <div class="TrailerBox">
+                <img src="{{ serie.background.url }}" alt="" class="Poster">
+                <video class="TrlVideo" controls poster="{{ serie.background.url }}">
+                    <source src="">
+                    Your Browser doesn't support this tag
+                </video>
+            </div>
             <div class="DownloadBox">
                 {% for season in seasons %}
                     <div class="DWContainer">
@@ -112,13 +119,7 @@
                 </span>
             </div>
         </div>
-            <div class="TrailerBox">
-                <img src="{{ serie.background.url }}" alt="" class="Poster">
-                <video class="TrlVideo" controls poster="{{ serie.background.url }}">
-                    <source src="">
-                    Your Browser doesn't support this tag
-                </video>
-            </div>
+            
         <div class="MovieSlider">
             <div class="SliderTitle">Same genre</div>
             <main>
