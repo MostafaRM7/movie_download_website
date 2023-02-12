@@ -8,14 +8,17 @@
 {% block body %}
     <div class="rt-container">
         <div class="col-rt-12">
-            <div class="Scriptcontent">
+            <div class="Scriptcontent" style="
+            background : url({{slider.number_3.background.url}}) top no-repeat;
+            background-size : cover;
+            ">
 
                 <!-- partial:index.partial.html -->
-                <img id="1" class="hide" src="{{ slider.number_1.background.url }}" alt="">
+                <!-- <img id="1" class="hide" src="{{ slider.number_1.background.url }}" alt="">
                 <img id="2" class="hide" src="{{ slider.number_2.background.url }}" alt="">
                 <img id="3" class="bg-Image" src="{{ slider.number_3.background.url }}" alt="">
                 <img id="4" class="hide" src="{{ slider.number_4.background.url }}" alt="">
-                <img id="5" class="hide" src="{{ slider.number_5.background.url }}" alt="">
+                <img id="5" class="hide" src="{{ slider.number_5.background.url }}" alt=""> -->
                 <div class="bg-effect"></div>
                 <div class="Slidercontainer">
                     <div class="SliderHeader">
@@ -24,12 +27,12 @@
                      </div>
                   </div>
                     <div class="wgh-slider">
-                        <input class="wgh-slider-target" onclick="set_wall(1)" type="radio" id="slide-1" name="slider">
-                        <input class="wgh-slider-target" onclick="set_wall(2)" type="radio" id="slide-2" name="slider">
-                        <input class="wgh-slider-target" onclick="set_wall(3)" type="radio" id="slide-3" name="slider"
+                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_1.background.url }}')" type="radio" id="slide-1" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_2.background.url}}')" type="radio" id="slide-2" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_3.background.url}} ' )" type="radio" id="slide-3" name="slider"
                                checked="checked">
-                        <input class="wgh-slider-target" onclick="set_wall(4)" type="radio" id="slide-4" name="slider">
-                        <input class="wgh-slider-target" onclick="set_wall(5)" type="radio" id="slide-5" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_4.background.url}}')" type="radio" id="slide-4" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_5.background.url}}')" type="radio" id="slide-5" name="slider">
                         <div class="wgh-slider__viewport">
                             <div class="wgh-slider__viewbox">
                                 <div class="wgh-slider__container">
