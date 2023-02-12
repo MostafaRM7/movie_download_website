@@ -5,54 +5,12 @@ function show_password() {
     } else {
         pass_input.type = 'password'
     }
-
 }
 
-function set_wall(id) {
-    switch (id) {
-        case 1:
-            $("#" + id).attr('class', 'bg-Image')
-            $("#2").attr('class', 'hide')
-            $("#3").attr('class', 'hide')
-            $("#4").attr('class', 'hide')
-            $("#5").attr('class', 'hide')
-            break;
-
-        case 2:
-            $("#" + id).attr('class', 'bg-Image')
-            $("#1").attr('class', 'hide')
-            $("#3").attr('class', 'hide')
-            $("#4").attr('class', 'hide')
-            $("#5").attr('class', 'hide')
-            break;
-
-        case 3:
-            $("#" + id).attr('class', 'bg-Image')
-            $("#1").attr('class', 'hide')
-            $("#2").attr('class', 'hide')
-            $("#4").attr('class', 'hide')
-            $("#5").attr('class', 'hide')
-            break;
-
-        case 4:
-            $("#" + id).attr('class', 'bg-Image')
-            $("#1").attr('class', 'hide')
-            $("#2").attr('class', 'hide')
-            $("#3").attr('class', 'hide')
-            $("#5").attr('class', 'hide')
-            break;
-
-        case 5:
-            $("#" + id).attr('class', 'bg-Image')
-            $("#1").attr('class', 'hide')
-            $("#2").attr('class', 'hide')
-            $("#4").attr('class', 'hide')
-            $("#3").attr('class', 'hide')
-            break;
-        default:
-            break;
-
-    }
+function set_wall(url) {
+            $(".Scriptcontent").css(`background`, `url(`+ url + `) top no-repeat`
+            );
+            $(".Scriptcontent").css("background-size","cover");
 }
 function remove_from_favorite(slug) {
     console.log(slug)
@@ -83,10 +41,8 @@ function add_to_favorite(slug) {
 }
 
 function hide_element(id) {
-    let element = document.getElementById(id)
-    element.style.display = 'none'
+    $(`#${id}`).hide(800);
 }
 function show_element(id) {
-    let element = document.getElementById(id)
-    element.style.display = 'block'
+    $(`#${id}`).show(800);
 }

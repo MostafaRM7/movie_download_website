@@ -1455,6 +1455,11 @@ footer .UpperPart .WebLogo {
   {
    height: 606px;
   }
+  .Section3
+  {
+    border-bottom: 2px solid rgb(146, 146, 146);
+    padding-bottom: 40px;
+  }
    .trend-item .trend-item-image img
   {
     width: 226px;
@@ -1583,6 +1588,10 @@ footer .UpperPart .WebLogo {
 }
 @media only screen and (max-width : 480px)
 {
+  .hover i
+    {
+      font-size: 45px;
+    }
    .wgh-slider-item-figure {
     width: 206px;
     height: 320px;
@@ -1610,7 +1619,7 @@ footer .UpperPart .WebLogo {
    }
     .SoMeIcons
     {
-        margin-left: 35px;
+        margin-left: 16px;
     }
     .GenreFilter .Genre, .Year
     {
@@ -1624,6 +1633,10 @@ footer .UpperPart .WebLogo {
     {
       width: 165px;
     }
+    .designer p {
+      font-size: 20px;
+      margin-top: 0;
+  }
 }
 @media only screen and (max-width : 450px)
 {
@@ -1631,7 +1644,10 @@ footer .UpperPart .WebLogo {
     {
       width: 170px;
     }
-    
+    .hover i
+    {
+      font-size: 40px;
+    }
 }
 @media only screen and (max-width : 425px)
 {
@@ -1648,6 +1664,14 @@ footer .UpperPart .WebLogo {
     {
       font-size: 14px;
     }
+    .DWContainer p
+    {
+      font-size: 14px;
+    }
+    .designer p {
+      font-size: 19px;
+      margin-top: 0;
+  }
 }
 @media only screen and (max-width : 416px)
 {
@@ -1655,14 +1679,12 @@ footer .UpperPart .WebLogo {
   {
     font-size: 19px;
   }
-  
-  
   .SliderHeader .HSliderTitle
   {
     font-size: 20px;
   }
   .wgh-slider-item-figure {
-    width: 197px;
+    width: 186px;
     height: 291px;
 }
   .wgh-slider__container {
@@ -1673,10 +1695,7 @@ footer .UpperPart .WebLogo {
  {
   font-size: 18px;
  }
- .SoMeIcons
- {
-  margin-left: 26px;
- }
+ 
  .designer 
  {
   margin-right: 19px;
@@ -1707,12 +1726,7 @@ footer .UpperPart .WebLogo {
     height: 44px;
     font-size: 15px;
   }
-    .designer p
-  {
-    font-size: 20px;
-    margin-top: 0;
-    
-  }
+  
 }
 @media only screen and (max-width : 390px)
 {
