@@ -17,6 +17,7 @@ nav
 .dashContainer
 {
     width: 80%;
+    overflow: hidden;
     z-index: 2;
     margin: 90px auto 20px auto;
     border-radius: 10px;

@@ -28,20 +28,6 @@ NavMenuToggle.addEventListener(
     NavMenuToggle.classList.remove("active");
   })
   
-// //Login nav item eventlistener
-// LoginButton.addEventListener("click",() => {
-//     window.open("Login.html","_self");
-//   })
-//   //movie nav item eventlistener
-//   navButtons[1].addEventListener("click",() => {
-//     localStorage.setItem("HeadTitle",navButtons[1].textContent)
-//     window.open("MOSPage.html","_self")
-//   })
-//   //series nav item eventlistener
-//   navButtons[2].addEventListener("click",() => {
-//     localStorage.setItem("HeadTitle",navButtons[2].textContent)
-//     window.open("MOSPage.html","_self")
-//   })
   //contact us nav item eventlistener
   document.querySelectorAll(".navbarList .navbarItem")[3].addEventListener("click",() => {
     document.querySelector("footer").scrollIntoView();

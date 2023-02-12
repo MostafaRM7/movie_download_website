@@ -81,7 +81,9 @@
 
             </div>
             <div class="TrailerBox">
-                <img src="{{ film.background.url }}" alt="" class="Poster">
+                {% thumbnail film.background "1920x1080" crop="center" as im %}
+                    <img src="{{ im.url }}" alt="" class="Poster">
+                {% endthumbnail %}
                 <video class="TrlVideo" controls poster="{{ film.background.url }}">
                     <source src="">
                     Your Browser doesn't support this tag

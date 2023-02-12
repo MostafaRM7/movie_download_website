@@ -1178,14 +1178,15 @@ footer .UpperPart .WebLogo {
 }
 
 .SoMeIcons {
-    color: aliceblue;
+   
     font-size: 28px;
     margin-left: 70px;
 }
 
-.SoMeIcons i {
+.SoMeIcons a  {
     margin-left: 10px;
     cursor: pointer;
+     color: aliceblue;
 }
 
 .SoMeIcons i:hover {
@@ -1327,6 +1328,10 @@ footer .UpperPart .WebLogo {
     width: 210px;
     height: 300px;
   }
+  .MovieImage
+  {
+    margin-top: -11px;
+  }
   .movieBox
   {
     position: relative;
@@ -1403,6 +1408,10 @@ footer .UpperPart .WebLogo {
     width: 243px;
     height: 375px;
    }
+   .MovieImage
+  {
+    margin-top: -44px;
+  }
   .Continue {
     top: 238px;
    }
@@ -1578,6 +1587,19 @@ footer .UpperPart .WebLogo {
     width: 206px;
     height: 320px;
    }
+   .movieBox .Continue {
+    top: 208px;
+    right: 30px;
+}
+   .movieBox .Continue .AdameMatlab {
+    width: 148px;
+    height: 41px;
+    font-size: 16px;
+   }
+   .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child)
+    {
+      margin-top: 2px;
+    }
     footer .UpperPart .ContactINFO div
     {
         font-size: 20px;
@@ -1676,20 +1698,20 @@ footer .UpperPart .WebLogo {
   {
     font-size: 16px;
   }
-  .movieBox .Continue
-  {
+  .Continue {
     top: 197px;
-    right: 21px;
-  }
+    right: 10px;
+}
   .movieBox .Continue .AdameMatlab {
-    width: 149px;
+    width: 129px;
     height: 44px;
-    font-size: 17px;
+    font-size: 15px;
   }
-  
-  .designer p
+    .designer p
   {
-    font-size: 22px;
+    font-size: 20px;
+    margin-top: 0;
+    
   }
 }
 @media only screen and (max-width : 390px)
