@@ -51,7 +51,7 @@
         <main id="contentBar" class="contentBar  col-md-9 col-sm-12 ms-4">
             <div id="saved">
                 <h3 class="text-white mt-sm-4">Saved movies</h3>
-                <section class="regular slider h-50 mt-4">
+                <section class="regular DashSlider slider h-50 mt-4">
                     {% for serie in saved_series %}
                         <div class="SavedItem ms-3">
                             <div class="SavedItemImage">
@@ -110,5 +110,7 @@
                 </div>
             </div>
         </main>
+    </div>
+    <div class="nav-mask">
     </div>
 {% endblock %}
