@@ -16,8 +16,8 @@ class HomeView(View):
             'slider': Slider.objects.filter(is_active=True).first(),
             'latest_added_films': Film.objects.filter(is_active=True)[:5:-1],  # End of page
             'latest_added_series': Serie.objects.filter(is_active=True)[:5:-1],  # End of page
-            'recent_series': HomePageSlider.objects.filter(is_active=True).first().recent_series_slider_2.all()[:2:-1],
-            'recent_films': HomePageSlider.objects.filter(is_active=True).first().recent_films_slider_1.all()[:2:-1],
+            'recent_series': HomePageSlider.objects.filter(is_active=True).first().recent_series_slider_2.all(),
+            'recent_films': HomePageSlider.objects.filter(is_active=True).first().recent_films_slider_1.all(),
             'all_genres': Genre.objects.all(),
         }
         return render(request, 'index.html', context)

@@ -121,7 +121,7 @@ div:nth-last-child(3):hover::before
     border-radius: 10px;
 }
 
-.hover i 
+.SavedItemImage .hover i 
 {
     font-size: 30px;
 }
