@@ -1,0 +1,16 @@
+<section class="regular slider cartoon-slider">
+    {% for cartoon in cartoons %}
+        <div class="CartoonItem">
+            <div class="CartoonItemImage">
+                <img class="img-fluid" src="{{ cartoon.banner.url }}" alt="">
+                <div class="hover">
+                    <a href="{{ cartoon.get_absolute_url }}"><i class='fas fa-play'></i></a>
+                </div>
+            </div>
+            <div class="MovieName">
+                <h4>{{ cartoon.name }}</h4>
+            </div>
+        </div>
+    {% endfor %}
+
+</section>

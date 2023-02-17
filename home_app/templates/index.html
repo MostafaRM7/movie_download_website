@@ -9,30 +9,29 @@
     <div class="rt-container">
         <div class="col-rt-12">
             <div class="Scriptcontent" style="
-            background : url({{slider.number_3.background.url}}) top no-repeat;
-            background-size : cover;
-            ">
+                    background : url({{ slider.number_3.background.url }}) top no-repeat;
+                    background-size : cover;
+                    ">
 
-                <!-- partial:index.partial.html -->
-                <!-- <img id="1" class="hide" src="{{ slider.number_1.background.url }}" alt="">
-                <img id="2" class="hide" src="{{ slider.number_2.background.url }}" alt="">
-                <img id="3" class="bg-Image" src="{{ slider.number_3.background.url }}" alt="">
-                <img id="4" class="hide" src="{{ slider.number_4.background.url }}" alt="">
-                <img id="5" class="hide" src="{{ slider.number_5.background.url }}" alt=""> -->
                 <div class="bg-effect"></div>
                 <div class="Slidercontainer">
                     <div class="SliderHeader">
-                      <div class="HSliderTitle">
-                        Trend Series
-                     </div>
-                  </div>
+                        <div class="HSliderTitle">
+                            Trend Series
+                        </div>
+                    </div>
                     <div class="wgh-slider">
-                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_1.background.url }}')" type="radio" id="slide-1" name="slider">
-                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_2.background.url}}')" type="radio" id="slide-2" name="slider">
-                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_3.background.url}} ' )" type="radio" id="slide-3" name="slider"
+                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_1.background.url }}')"
+                               type="radio" id="slide-1" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_2.background.url }}')"
+                               type="radio" id="slide-2" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_3.background.url }} ' )"
+                               type="radio" id="slide-3" name="slider"
                                checked="checked">
-                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_4.background.url}}')" type="radio" id="slide-4" name="slider">
-                        <input class="wgh-slider-target" onclick="set_wall('{{slider.number_5.background.url}}')" type="radio" id="slide-5" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_4.background.url }}')"
+                               type="radio" id="slide-4" name="slider">
+                        <input class="wgh-slider-target" onclick="set_wall('{{ slider.number_5.background.url }}')"
+                               type="radio" id="slide-5" name="slider">
                         <div class="wgh-slider__viewport">
                             <div class="wgh-slider__viewbox">
                                 <div class="wgh-slider__container">
@@ -49,7 +48,7 @@
                                                 </figcaption>
                                             </figure>
                                             <label class="wgh-slider-item__trigger" for="slide-1"
-                                                    ></label>
+                                            ></label>
                                         </div>
                                     </div>
                                     <!-- number 2 -->
@@ -65,7 +64,7 @@
                                                 </figcaption>
                                             </figure>
                                             <label class="wgh-slider-item__trigger" for="slide-2"
-                                                    ></label>
+                                            ></label>
                                         </div>
                                     </div>
                                     <!-- number 3 -->
@@ -81,7 +80,7 @@
                                                 </figcaption>
                                             </figure>
                                             <label class="wgh-slider-item__trigger" for="slide-3"
-                                                    ></label>
+                                            ></label>
                                         </div>
                                     </div>
                                     <!-- number 4 -->
@@ -97,7 +96,7 @@
                                                 </figcaption>
                                             </figure>
                                             <label class="wgh-slider-item__trigger" for="slide-4"
-                                                    ></label>
+                                            ></label>
                                         </div>
                                     </div>
                                     <!-- number 5 -->
@@ -113,7 +112,7 @@
                                                 </figcaption>
                                             </figure>
                                             <label class="wgh-slider-item__trigger" for="slide-5"
-                                                    ></label>
+                                            ></label>
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +192,7 @@
                         <div class="TopPart">
                             <div class="MovieImage">
                                 {% thumbnail film.banner "250x430" crop="center" as im %}
-                                    <img src="{{ im.url }}" alt="">
+                                    <a href="{{ film.get_absolute_url }}"><img src="{{ im.url }}" alt=""></a>
                                 {% endthumbnail %}
                             </div>
                             <div class="MovieInfo">
@@ -230,7 +229,7 @@
                         <div class="TopPart">
                             <div class="MovieImage">
                                 {% thumbnail serie.banner "250x430" crop="center" as im %}
-                                    <img src="{{ im.url }}" alt="">
+                                    <a href="{{ serie.get_absolute_url }}"><img src="{{ im.url }}" alt=""></a>
                                 {% endthumbnail %}
                             </div>
                             <div class="MovieInfo">
@@ -272,81 +271,7 @@
                 <div class="CartoonTtile">
                     Cartoons
                 </div>
-                <section class="regular slider cartoon-slider">
-                    
-                    <div class="CartoonItem">
-                        <a href="/Info.html"></a>
-                        <div class="CartoonItemImage">
-                          <img class="img-fluid" src="/assets/img/RMSImages/Andor-2022.jpg" alt="">
-                          <div class="hover">
-                            <i class='fas fa-play'></i>
-                          </div>
-                        </div>
-                        <div class="MovieName">
-                          <h4>The Visitor</h4>
-                      </div>
-                      </div>
-                      <div class="CartoonItem">
-                        <div class="CartoonItemImage">
-                          <img class="img-fluid" src="/assets/img/RMSImages/Luckiest-Girl-Alive-2022.jpg" alt="">
-                          <div class="hover">
-                            <i class='fas fa-play'></i>
-                          </div>
-                        </div>
-                        <div class="MovieName">
-                          <h4>Halloween Kills</h4>
-                        </div>
-                      </div>
-                      <div class="CartoonItem">
-                        <a href="/Info.html"></a>
-                        <div class="CartoonItemImage">
-                          <img class="img-fluid" src="/assets/img/RMSImages/The-Cleaning-Lady.jpg" alt="">
-                          <div class="hover">
-                            <i class='fas fa-play'></i>
-                          </div>
-                        </div>
-                        <div class="MovieName">
-                          <h4>Dear-Zoe</h4>
-                      </div>
-                      </div>
-                      <div class="CartoonItem">
-                        <a href="/Info.html"></a>
-                        <div class="CartoonItemImage">
-                          <img class="img-fluid" src="/assets/img/RMSImages/The-Visitor.jpg" alt="">
-                          <div class="hover">
-                            <i class='fas fa-play'></i>
-                          </div>
-                        </div>
-                        <div class="MovieName">
-                          <h4>The Visitor</h4>
-                      </div>
-                      </div>
-                      <div class="CartoonItem">
-                        <a href="/Info.html"></a>
-                        <div class="CartoonItemImage">
-                          <img class="img-fluid" src="/assets/img/RMSImages/The-Visitor.jpg" alt="">
-                          <div class="hover">
-                            <i class='fas fa-play'></i>
-                          </div>
-                        </div>
-                        <div class="MovieName">
-                          <h4>The Visitor</h4>
-                      </div>
-                      </div>
-                      <div class="CartoonItem">
-                        <div class="CartoonItemImage">
-                          <img class="img-fluid" src="/assets/img/RMSImages/A-Jazzmans-Blues.jpg" alt="">
-                          <div class="hover">
-                            <i class='fas fa-play'></i>
-                          </div>
-                        </div>
-                        <div class="MovieName">
-                          <h4>A-Jazzmans-Blues</h4>
-                        </div>
-                      </div>
-                                         
-
-                </section>
+                {% render_partial 'home_app.views.cartoons' %}
                 <div class="YearTitle">
                     Year
                 </div>

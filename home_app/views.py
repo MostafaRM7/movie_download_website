@@ -7,8 +7,6 @@ from home_app.models import Slider, HomePageSlider, SiteSetting
 from movie_app.models import Film, Serie, Genre, Date
 
 
-# Create your views here.
-
 class HomeView(View):
     @staticmethod
     def get(request):
@@ -85,3 +83,11 @@ def genres(request):
 
 def years(request):
     return render(request, 'years_component.html', {'all_years': Date.objects.all()})
+
+
+def cartoons(request):
+    return render(request, 'cartoons_component.html', {
+        'cartoons': list(chain(Film.objects.filter(genre__genre__contains="animation"),
+                               Serie.objects.filter(genre__genre__contains="animation")))
+    }
+                  )

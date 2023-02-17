@@ -15,7 +15,7 @@
                         <div class="TopPart">
                             <div class="MovieImage">
                                 {% thumbnail film.banner "294x458" crop="center" as im %}
-                                    <img src="{{ im.url }}" alt="The 5th Exotic">
+                                    <a href="{{ film.get_absolute_url }}"><img src="{{ im.url }}" alt=""></a>
                                 {% endthumbnail %}
                             </div>
                             <div class="MovieInfo">
