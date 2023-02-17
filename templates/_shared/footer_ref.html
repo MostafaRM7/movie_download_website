@@ -1,6 +1,7 @@
 <script  src="/assets/js/NavbarScript.js"></script>
 <script  type="text/javascript">
-    $(".regular").hasClass("DashSlider") ? 
+   if($(".regular").hasClass("DashSlider"))
+   {
     $(".regular").slick({
         arrows : false,
         slidesToShow: 4,
@@ -31,7 +32,34 @@
    ]
     
     })
-     : 
+  }
+  else if($(".regular").hasClass("cartoon-slider"))
+  {
+    $(".regular").slick({
+        arrows : false,
+        slidesToShow: 2,
+        variableWidth : true,
+        slidesToScroll: 1,
+        responsive: [   
+        {
+      breakpoint: 1080,
+      settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 500,
+      settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+      }
+    }
+   ]
+    
+    })
+  }
+  else
      $(".regular").slick({
       infinite: true,
       centerMode: true,
