@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
 from django.urls import include
+from django.urls import path
 
 urlpatterns = [
     path('user/', include('user_app.urls')),
@@ -26,3 +26,5 @@ urlpatterns = [
     path('', include('home_app.urls')),
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'home_app.views.handler_404'
