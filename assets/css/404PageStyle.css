@@ -1,0 +1,96 @@
+@font-face
+{
+    font-family: Scary font;
+    src: url('../fonts/Melted\ Monster.ttf');
+}
+.page404bg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('/assets/img/404/404Bg.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.2ms;
+    z-index: -2;
+}
+.page404bg::before
+{
+    position: absolute;
+    top: 0;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #000 0%, transparent 36%);
+}
+.container404
+{
+    width: 100%;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.block404
+{
+    border-left: 8px solid red;
+    padding-left: 30px;
+    margin: 50px 0 auto 30px;
+}
+.container404 .block404 p 
+{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #e28d33;
+    text-shadow: 3px 3px 10px #e28d3338;
+}
+.block404  h1 span
+{
+    color: red;
+    font-family: Scary font;
+    font-size: 50px;
+    margin-left: 10px;
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.367);
+}
+.goHomeButton
+{
+    position: relative;
+    margin-top: 22px;
+    padding: 4px;
+    padding: 13px;
+    border-radius: 8px;
+    background: none;
+    border: 2px solid red;
+    z-index: 2;
+}
+.goHomeButton::before
+{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    height: 100%;
+    background: #ff0000;
+    transition: 0.2s;
+}
+.goHomeButton:hover
+{
+    border: none;
+}
+.goHomeButton:hover::before 
+{
+    width: 100%;
+}
+.goHomeButton:hover a 
+{
+    color: black;
+}
+.goHomeButton a 
+{
+    text-decoration: none;
+    color: red;
+    font-weight: 600;
+    font-size: 19px;
+}
