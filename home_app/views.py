@@ -1,8 +1,10 @@
 from itertools import chain
+
 from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views import View
+
 from home_app.models import Slider, HomePageSlider, SiteSetting
 from movie_app.models import Film, Serie, Genre, Date
 

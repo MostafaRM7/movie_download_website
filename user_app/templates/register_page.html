@@ -5,37 +5,56 @@
 {% endblock %}
 
 {% block body %}
-<div class="container1 sign">
-    <div class="background-mask"></div>
-    <form class="LoginBox" action="{% url 'register-page' %}" method="post">
-        <div class="Title">
-            <h1>Sign up</h1>
-        </div>
-        <div class="formInput">
-            {{ register_form }}
-            {{ register_form.errors }}
-        </div>
-        {% csrf_token %}
-       <div class="confirmBox">
-        <input type="submit" class="SigninButt" value="Sign up">
-       </div>
+    <div class="container1 sign">
+        <div class="background-mask"></div>
+        <form class="LoginBox" action="{% url 'register-page' %}" method="post">
+            <div class="Title">
+                <h1>Sign up</h1>
+            </div>
+            <div class="formInput">
+                <label id="form-label" for=""> {{ register_form.email.label }} </label>
+                {{ register_form.email }}
+                {{ register_form.email.errors }}
+                <label id="form-label" for="">{{ register_form.password.label }}</label>
+                {{ register_form.password }}
+                {{ register_form.password.errors }}
+                <label id="form-label" for="">{{ register_form.confirm_password.label }}</label>
+                {{ register_form.confirm_password }}
+                {{ register_form.confirm_password.errors }}
+            </div>
+            {% csrf_token %}
+            <div class="confirmBox">
+                <input type="submit" class="SigninButt" value="Sign up">
+            </div>
 
-        <div class="signsep separate">
-            <div></div>
-            <p>Or</p>
-            <div></div>
-        </div>
+            <div class="signsep separate">
+                <div></div>
+                <p>Or</p>
+                <div></div>
+            </div>
 
-      <div class="GoogleLogin">
-            <i class="fa fa-google"></i>
-             <p>Continue with Google</p>
-      </div>
-      <div class="LoginBoxFooter">
-        <p style="font-size: 14px; font-weight: bold">Do you have an account? <span><a href="{% url 'login-page' %}">Login</a></span></p>
+            <div class="GoogleLogin">
+                <i class="fa fa-google"></i>
+                <p>Continue with Google</p>
+            </div>
+            <div class="LoginBoxFooter">
+                <p style="font-size: 14px; font-weight: bold">Do you have an account? <span><a
+                        href="{% url 'login-page' %}">Login</a></span></p>
+            </div>
+
+        </form>
     </div>
-
-    </form>
-</div>
-<div class="nav-mask">
-</div>
+    <div class="nav-mask">
+    </div>
+    <style>
+        .errorlist {
+            color: red;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        #form-label {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
 {% endblock %}

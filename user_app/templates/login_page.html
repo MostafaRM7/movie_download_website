@@ -43,9 +43,17 @@
             </div>
 
             <div class="LoginBoxFooter">
-                <p style="font-size: 14px; font-weight: bold">Don't you have account? <span><a href="{% url 'register-page' %}">Sign up</a></span></p>
+                <p style="font-size: 14px; font-weight: bold">Don't you have account? <span><a
+                        href="{% url 'register-page' %}">Sign up</a></span></p>
             </div>
 
         </form>
     </div>
+    <style>
+        .errorlist {
+            color: red;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
 {% endblock %}
