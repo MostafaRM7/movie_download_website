@@ -93,3 +93,4 @@ def cartoons(request):
                                Serie.objects.filter(genre__genre__contains="animation")))
     }
                   )
+
