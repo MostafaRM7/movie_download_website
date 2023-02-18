@@ -71,6 +71,10 @@ div:nth-last-child(3):hover::before
     background-color: rgb(255, 45, 45);
     width: 100%;
 }
+.sidebar .itemSelected::before
+{
+    width: 100%;
+}
 .sidebar > div h4 
 {
     text-shadow: 0px 0px 10px #000000;

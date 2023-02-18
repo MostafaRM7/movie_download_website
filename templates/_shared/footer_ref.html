@@ -40,6 +40,8 @@
         slidesToShow: 2,
         variableWidth : true,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
         responsive: [   
         {
       breakpoint: 1080,
@@ -53,10 +55,9 @@
       settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+        }
       }
-    }
-   ]
-    
+    ]
     })
   }
   else
@@ -64,7 +65,7 @@
       infinite: true,
       centerMode: true,
       arrows : false,
-      slidesToShow: 5,
+      slidesToShow: 4,
       slidesToScroll: 3,
       centerMode: false,
       swipeToSlide : true,
@@ -75,6 +76,7 @@
       breakpoint: 768,
       settings: {
           slidesToShow: 2,
+          slidesToScroll: 2
       }
     },
     {
@@ -92,6 +94,3 @@
 {#<script  src="/assets/js/search.js"></script>#}
 <script  src="/assets/js/jquerysearch.js"></script>
 <script  src="/assets/js/autocompelet.js"></script>
-<!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
-
