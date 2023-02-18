@@ -1104,12 +1104,13 @@ main > h1 {
   .pagination a
   {
     text-decoration: none;
-    margin-left: 30px;
+    margin: 10px 30px 0 0;
     text-align: center;
     padding: 13px;
     color: white;
     background-color: #202020;;
     border-radius: 10px;
+
   }
   .pagination a span 
   {
@@ -1512,7 +1513,7 @@ footer .UpperPart .WebLogo {
   }
   .pagination
   {
-    margin: 40px 0 0 14px;
+    margin: 40px auto 0 auto;
   }
   .movieBox  .Continue
   {
@@ -1585,6 +1586,10 @@ footer .UpperPart .WebLogo {
   {
     width: 175px;
   }
+  .MovieName
+  {
+    font-size: 19px;
+  }
 }
 @media only screen and (max-width : 480px)
 {
@@ -1598,7 +1603,7 @@ footer .UpperPart .WebLogo {
    }
    .movieBox .Continue {
     top: 208px;
-    right: 30px;
+    right: 14px;
 }
    .movieBox .Continue .AdameMatlab {
     width: 148px;
@@ -1642,7 +1647,7 @@ footer .UpperPart .WebLogo {
 {
     .trend-item .trend-item-image img
     {
-      width: 170px;
+      width: 161px;
     }
     .hover i
     {

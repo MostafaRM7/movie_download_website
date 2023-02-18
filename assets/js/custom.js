@@ -39,10 +39,22 @@ function add_to_favorite(slug) {
         }
     })
 }
-
-function hide_element(id) {
-    $(`#${id}`).hide(800);
-}
-function show_element(id) {
-    $(`#${id}`).show(800);
+function SelectToggle(id)
+{
+    console.log("check")
+    switch(id)
+    {
+        case 'saved' :
+            $(".AvatarSaved").addClass("itemSelected");
+            $(".AvatarProfile").removeClass("itemSelected");
+            $('#saved').show(800);
+            $('#profile').hide(800);
+            break;
+        case 'profile' :
+            $(".AvatarProfile").addClass("itemSelected");
+            $(".AvatarSaved").removeClass("itemSelected");
+            $('#profile').show(800);
+            $('#saved').hide(800);
+            break;
+    }   
 }
