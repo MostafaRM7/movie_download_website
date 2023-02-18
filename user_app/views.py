@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.views import View
 
 from movie_app.models import Serie, Film
-from .forms import LoginFrom, RegisterForm
+from .forms import LoginForm, RegisterForm
 from .models import User
 
 
@@ -18,34 +18,34 @@ class LoginView(View):
     def get(request: HttpRequest):
         if request.user.is_authenticated:
             return redirect(reverse('home-page'))
-        context = {'login_form': LoginFrom()}
+        context = {'login_form': LoginForm()}
         return render(request, 'login_page.html', context)
 
     @staticmethod
     def post(request: HttpRequest):
-        login_form = LoginFrom(request.POST)
+        login_form = LoginForm(request.POST)
         if login_form.is_valid():
             user_email = login_form.cleaned_data.get('email')
             user_password = login_form.cleaned_data.get('password')
             remember = login_form.cleaned_data.get('remember_me')
             user: User = User.objects.filter(email__iexact=user_email).first()
             if user is not None:
-                if user.is_active:
-                    is_pass_correct = user.check_password(user_password)
-                    if is_pass_correct:
+                is_pass_correct = user.check_password(user_password)
+                if is_pass_correct:
+                    if user.is_active:
                         login(request, user)
                         if not remember:
                             request.session.set_expiry(0)
                         return redirect(reverse('home-page'))
                     else:
-                        login_form.add_error('password', 'Invalid Password')
+                        login_form.add_error('password', 'Email is not activated')
                 else:
-                    login_form.add_error('password', 'Please activate your account first')
+                    login_form.add_error('password', 'Invalid Password')
             else:
-                login_form.add_error('email', 'Email or password is incorrect')
+                login_form.add_error('password', 'Email or Password is incorrect')
         else:
-            pass
-        context = {'login_form': LoginFrom()}
+            login_form.add_error('email', 'Email or Password is incorrect')
+        context = {'login_form': login_form}
         return render(request, 'login_page.html', context)
 
 
@@ -70,17 +70,20 @@ class RegisterView(View):
             if email_exists:
                 register_form.add_error('email', 'Email already exists')
             else:
-                new_user = User(
-                    email=user_email,
-                    email_active_code=get_random_string(72),
-                    is_active=False,
-                    username=user_email
-                )
-                new_user.set_password(register_form.cleaned_data.get('password'))
-                new_user.save()
-                return render(request, 'success.html')
-        else:
-            return render(request, 'error.html')
+                if register_form.cleaned_data.get('password') != register_form.cleaned_data.get('confirm_password'):
+                    register_form.add_error('confirm_password', 'Passwords does not match')
+                else:
+                    new_user = User(
+                        email=user_email,
+                        email_active_code=get_random_string(72),
+                        is_active=False,
+                        username=user_email
+                    )
+                    new_user.set_password(register_form.cleaned_data.get('password'))
+                    new_user.save()
+                    login(request, new_user)
+                    return redirect(reverse('dashboard-page'))
+        return render(request, 'register_page.html', {'register_form': register_form})
 
 
 @method_decorator(login_required(), name='dispatch')
@@ -92,6 +95,7 @@ class DashboardView(View):
         saved_series = user.saved_series.all()
         return render(request, 'dashboard.html',
                       {'user': user, 'saved_films': saved_films, 'saved_series': saved_series})
+
     @staticmethod
     def post(request: HttpRequest):
         user = request.user

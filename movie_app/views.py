@@ -1,6 +1,5 @@
 from django.db.models import Count
 from django.views.generic import DetailView, ListView
-
 from utils.tools import get_client_ip
 from .models import Serie, Film, Part, Season, FilmByQuality, FilmVisit, SerieVisit, Genre, Date
 

@@ -49,7 +49,7 @@ body
 }
 .login .LoginBox
 {
-    height: 627px;
+    height: 655px;
 }
 .sign .LoginBox
 {
@@ -90,6 +90,15 @@ body
 .formInput input:focus
 {
     width: 92%;
+}
+.errorlist {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+}
+#form-label {
+    font-weight: bold;
+    margin-top: 15px;
 }
 .RememberMeBox
 {
@@ -250,5 +259,17 @@ body
     {
         width: 75%;
         height: 650px;
+    }
+    .Title h1
+    {
+        font-size: 30px;
+    }
+    .GoogleLogin i 
+    {
+        font-size: 22px;
+    }
+    .GoogleLogin p
+    {
+        font-size: 17px;
     }
  }

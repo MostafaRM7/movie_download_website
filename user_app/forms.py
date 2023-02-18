@@ -40,17 +40,8 @@ class RegisterForm(Form):
         ]
     )
 
-    def clean_confirm_password(self):
-        password = self.cleaned_data.get('password')
-        confirm_password = self.cleaned_data.get('confirm_password')
 
-        if password == confirm_password:
-            return confirm_password
-
-        raise ValidationError('Password does\'nt match confirm password')
-
-
-class LoginFrom(Form):
+class LoginForm(Form):
     email = forms.EmailField(
         label="Email",
         widget=forms.EmailInput(
