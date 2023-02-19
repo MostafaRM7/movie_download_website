@@ -952,9 +952,9 @@ main > h1 {
 .movieBox {
     width: 90%;
     margin: 50px 100px;
-    background-color: rgba(19, 19, 19, 0.563);
+    background-color: rgb(19 19 19 / 86%);
     border-radius: 10px;
-    box-shadow: 2px 2px 6px rgb(23, 23, 23);
+    box-shadow: 1px 1px 6px rgb(53 53 53);
     padding-bottom: 20px;
 }
 
@@ -976,6 +976,11 @@ main > h1 {
 }
 
 .MovieImage img {
+    box-shadow: -3px 3px 6px black;
+    border-left: 3px solid #7e7e7e;
+    border-bottom: 3px solid #7e7e7e;
+    border-right: 2px solid #7e7e7e;
+    border-top: 2px solid #7e7e7e;
     max-width: 100%;
     max-height: 100%;
     margin-left: 10px;
@@ -1008,8 +1013,9 @@ main > h1 {
     margin-left: -5px;
     border-radius: 10px;
     line-height: 30px;
-    border-left: 2px solid white;
-    background-color: rgb(19, 19, 19);
+    border-left: 3px solid white;
+    box-shadow: -3px 2px 7px #0000003d;
+    background-color: rgb(7 7 7);
     padding: 10px;
 }
 
@@ -1442,16 +1448,17 @@ footer .UpperPart .WebLogo {
   .wgh-slider__container
   {
    width: 278px;
-   left: -76px;
+   left: 0;
   }
   .Trend-Items
   {
     grid-template-columns: auto auto;
   }
-  .wgh-slider-item-figure {
+  .wgh-slider-item-figure , .wgh-slider__viewbox{
     width: 206px;
     height: 319px;
-}
+  }
+  
   .Section2
   {
    height: 606px;
@@ -1590,6 +1597,10 @@ footer .UpperPart .WebLogo {
   {
     font-size: 19px;
   }
+  .MovieTitle
+  {
+    margin-bottom: 15px;
+  }
 }
 @media only screen and (max-width : 480px)
 {
@@ -1601,15 +1612,26 @@ footer .UpperPart .WebLogo {
     width: 206px;
     height: 320px;
    }
+   .wgh-slider__container
+  {
+   width: 278px;
+   left: 0;
+  }
    .movieBox .Continue {
     top: 208px;
     right: 14px;
-}
+   }
    .movieBox .Continue .AdameMatlab {
     width: 148px;
     height: 41px;
     font-size: 16px;
    }
+   .wgh-slider__viewbox
+   {
+    width: 206px;
+    height: 320px;
+   }
+   
    .movieBoxContainer .TopPart .MovieInfo > div:not(:first-child)
     {
       margin-top: 2px;
@@ -1688,13 +1710,12 @@ footer .UpperPart .WebLogo {
   {
     font-size: 20px;
   }
-  .wgh-slider-item-figure {
+  .wgh-slider-item-figure , .wgh-slider__viewbox{
     width: 186px;
     height: 291px;
 }
   .wgh-slider__container {
     width: 265px;
-    left: -99px;
 }
  footer .UpperPart .ContactINFO div
  {
@@ -1743,14 +1764,12 @@ footer .UpperPart .WebLogo {
 }
 @media only screen and (max-width : 376px)
 {
-  .wgh-slider-item-figure {
+  .wgh-slider-item-figure , .wgh-slider__viewbox{
     width: 187px;
     height: 296px;
 }
  .wgh-slider__viewbox {
   perspective: 277vw;
-  margin: 0 auto 0 209px;
-  width: 0%;
  }
   .trend-item .trend-item-image img
   {
@@ -1772,9 +1791,6 @@ footer .UpperPart .WebLogo {
    }
   .trend-item-image .Trend-Image {
     width: 232px;
-  }
-  .wgh-slider__container {
-    left: -127px;
   }
   .trend-item-image img {
     width : 235px;
