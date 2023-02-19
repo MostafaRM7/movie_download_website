@@ -94,3 +94,6 @@ def cartoons(request):
     }
                   )
 
+
+def handler_404(request, exception):
+    return render(request, '_shared/404.html', status=404)
