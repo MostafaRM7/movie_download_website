@@ -66,9 +66,9 @@ if($(".recentSeries-slider") != null)
         autoplay: true,
         variableWidth : true,
         infinite: true,
+        slidesToShow : 5,
+        slidesToScroll : 3,
         centerMode: true,
-        slidesToShow: 5,
-        slidesToScroll: 4,
         arrows : false,
         autoplaySpeed: 1200,
     })
@@ -91,3 +91,32 @@ if($(".Catitems") != null)
         variableWidth : true,
     })
 }
+if($(".regular") != null)
+  $(".regular").slick({
+   infinite: true,
+   centerMode: true,
+   arrows : false,
+   slidesToShow: 4,
+   autoplay: false,
+   slidesToScroll: 3,
+   centerMode: false,
+   swipeToSlide : true,
+   variableWidth : true,
+   adaptiveHeight: true,
+   responsive: [   
+{
+   breakpoint: 768,
+   settings: {
+       slidesToShow: 2,
+       slidesToScroll: 2
+   }
+ },
+ {
+     breakpoint: 500,
+   settings: {
+       slidesToShow: 1,
+       slidesToScroll: 1,
+   }
+ }
+]
+ });
