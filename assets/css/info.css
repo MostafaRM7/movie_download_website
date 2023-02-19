@@ -590,6 +590,10 @@
     {
         width: 75%;
     }
+    .DWContainer .DWItems p 
+    {
+        font-size: 15px;
+    }
     .DWContainer .DWTitle:hover
     {
         width: 80%;
