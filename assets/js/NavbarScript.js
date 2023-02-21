@@ -31,7 +31,7 @@ NavMenuToggle.addEventListener(
   //contact us nav item eventlistener
   document.querySelectorAll(".navbarList .navbarItem")[3].addEventListener("click",() => {
     document.querySelector("footer").scrollIntoView();
-    $(".navbarList").slideUp();
+    // $(".navbarList").slideUp();
     NavMenuToggle.classList.remove("active");
     $(".nav-mask").fadeOut(200);
   })
