@@ -41,7 +41,6 @@ function add_to_favorite(slug) {
 }
 function SelectToggle(id)
 {
-    console.log("check")
     switch(id)
     {
         case 'saved' :
