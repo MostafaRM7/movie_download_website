@@ -1,5 +1,10 @@
 # Default ignored files
 /shelf/
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
