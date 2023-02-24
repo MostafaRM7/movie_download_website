@@ -74,7 +74,7 @@ body
     margin-top: 15px;
     margin-left: 5px;
 }
-.formInput input
+.formInput #pass-input , #id_email
 {
     outline: none;
     border: none;
@@ -87,7 +87,7 @@ body
     color: aliceblue;
     transition: 0.3s;
 }
-.formInput input:focus
+.formInput #id_email:focus , #pass-input:focus
 {
     width: 92%;
 }
@@ -106,6 +106,16 @@ body
     margin: 7px auto 0 auto;
     color: aliceblue;
     display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.RememberMeBox .RememberMeInput
+{
+    margin-left: 15px;
+}
+.RememberMeBox .RememberMeInput:focus
+{
+    width: auto;
 }
 .confirmBox
 {

@@ -72,9 +72,8 @@ class LoginForm(Form):
         label='Remember me',
         widget=forms.CheckboxInput(
             attrs={
-                'class': 'rememberme',
-                'style': 'margin-top: 8px; margin-left: 10px'
+                'class': 'RememberMeInput'
             }
         ),
-        required=False
+        required = False
     )
